@@ -6,13 +6,16 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
+COPY          = cp
+TGZ           = tar cvfz
+TGZ_EXT       = tgz
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
-.PHONY: help clean html dirhtml pickle json htmlhelp qthelp latex changes linkcheck doctest pdf ps
+.PHONY: help clean html dirhtml pickle json htmlhelp qthelp latex changes linkcheck doctest pdf ps package
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -30,6 +33,10 @@ help:
 
 clean:
 	-rm -rf $(BUILDDIR)/*
+
+package : html pdf
+	$(COPY) $(BUILDDIR)/latex/ScalaStyleGuide.pdf $(BUILDDIR)/html
+	$(TGZ) ScalaStyleGuide.$(TGZ_EXT) $(BUILDDIR)/html
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
