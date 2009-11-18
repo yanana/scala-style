@@ -24,7 +24,6 @@ Contents:
    control_structures/index
    method_invocation/index
    files/index
-   links/index
 
 Indices and tables
 ==================
