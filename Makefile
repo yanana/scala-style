@@ -7,8 +7,11 @@ SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
 COPY          = cp
+CD            = cd
 TGZ           = tar cvfz
 TGZ_EXT       = tgz
+CMD_SEP       = ;
+DIR_UP        = ../
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -36,7 +39,7 @@ clean:
 
 package : html pdf
 	$(COPY) $(BUILDDIR)/latex/ScalaStyleGuide.pdf $(BUILDDIR)/html
-	$(TGZ) ScalaStyleGuide.$(TGZ_EXT) $(BUILDDIR)/html
+	$(CD) $(BUILDDIR)/html $(CMD_SEP) $(TGZ) $(DIR_UP)$(DIR_UP)ScalaStyleGuide.$(TGZ_EXT) .
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
