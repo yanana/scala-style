@@ -3,14 +3,18 @@ Methods with Numerous Arguments
 
 When calling a method which takes numerous arguments (in the range of five or
 more), it is often necessary to wrap the method invocation onto multiple lines.
-In such cases, the wrapped lines should be indented so that each parameter lines
-up with the first::
+In such cases, put all arguments on a line by themselves, indented two spaces
+from the current indent level::
     
-    foo(someVeryLongFieldName,
-        andAnotherVeryLongFieldName,
-        "this is a string",
-        3.1415)
+    foo(
+      someVeryLongFieldName,
+      andAnotherVeryLongFieldName,
+      "this is a string",
+      3.1415)
         
+This way, all parameters line up, but you don't need to re-align them if
+you change the name of the method later on.
+
 Great care should be taken to avoid these sorts of invocations well into the
 length of the line.  More specifically, such an invocation should be avoided
 when each parameter would have to be indented more than 50 spaces to achieve
@@ -19,10 +23,11 @@ line and indented two spaces::
     
     // right!
     val myOnerousAndLongFieldNameWithNoRealPoint = 
-      foo(someVeryLongFieldName,
-          andAnotherVeryLongFieldName,
-          "this is a string",
-          3.1415)
+      foo(
+        someVeryLongFieldName,
+        andAnotherVeryLongFieldName,
+        "this is a string",
+        3.1415)
     
     // wrong!
     val myOnerousAndLongFieldNameWithNoRealPoint = foo(someVeryLongFieldName,
