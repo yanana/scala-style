@@ -11,6 +11,7 @@ Get Set Up
 ----------
 
 * Sphinx - ``easy_install sphinx``
+* github-tools - ``easy_install github-tools``
 * LaTeX (specifically ``pdflatex``)
 
 Make it
