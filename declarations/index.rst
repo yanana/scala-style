@@ -1,6 +1,22 @@
 Declarations
 ============
 
+Class/Object/Trait constructors should be declared all on one line, unless
+the line becomes "too long" (about 100 characters).  In that case, put each 
+constructor argument on its own line, indented 2 spaces::
+
+    class Person(name: String, age: Int) {
+    }
+
+    class Person(
+      name: String,
+      age: Int,
+      birthdate: Date,
+      astrologicalSign: String,
+      shoeSize: Int,
+      favoriteColor: java.awt.Color) {
+    }
+
 All class/object/trait members should be declared interleaved with newlines.
 The only exceptions to this rule are ``var`` and ``val``.  These may be declared
 without the intervening newline, but only if none of the fields hava scaladoc
