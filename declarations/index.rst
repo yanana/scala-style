@@ -6,7 +6,7 @@ Classes
 
 Class/Object/Trait constructors should be declared all on one line, unless
 the line becomes "too long" (about 100 characters).  In that case, put each 
-constructor argument on its own line, indented 2 spaces::
+constructor argument on its own line, indented **four** spaces::
 
     class Person(name: String, age: Int) {
     }
@@ -21,8 +21,9 @@ constructor argument on its own line, indented 2 spaces::
     }
 
 If a class/object/trait extends anything, the same general rule applies, put
-it one one line unless it goes over about 100 characters, and then indent two
-spaces with each item being on its own line::
+it one one line unless it goes over about 100 characters, and then indent **two**
+spaces with each item being on its own line; this provides visual separation
+between constructor arguments and extensions.::
 
     class Person(
       name: String,
@@ -31,10 +32,10 @@ spaces with each item being on its own line::
       astrologicalSign: String,
       shoeSize: Int,
       favoriteColor: java.awt.Color) 
-      extends Entity
-      with Logging
-      with Identifiable
-      with Serializable {
+        extends Entity
+        with Logging
+        with Identifiable
+        with Serializable {
     }
 
 Ordering Of Class Elements
