@@ -12,7 +12,7 @@ when alternative styles should be preferred over the ones given here.
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    overview
 
