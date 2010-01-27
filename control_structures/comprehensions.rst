@@ -41,4 +41,7 @@ construct::
       printf("(%d, %d)", x, y)
     }
 
-
+Finally, ``for`` comprehensions are preferred to chained calls to
+``map``, ``flatMap``, and ``filter``, as this can get difficult
+to read (this is one of the purposes of the enhanced ``for`` 
+comprehension).
