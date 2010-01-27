@@ -38,33 +38,37 @@ between constructor arguments and extensions.::
         with Serializable {
     }
 
-Ordering Of Class Elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-All class/object/trait members should be declared interleaved with newlines.
-The only exceptions to this rule are ``var`` and ``val``.  These may be declared
-without the intervening newline, but only if none of the fields hava scaladoc
-and if all of the fields have simple (max of 20-ish chars, one line) definitions::
-    
-    class Foo {
-      val bar = 42
-      val baz = "Daniel"
-      
-      def doSomething() { ... }
-      
-      def add(x: Int, y: Int) = x + y
-    }
-    
-Fields should *precede* methods in a scope.  The only exception is if the ``val``
-has a block definition (more than one expression) and performs opertions which
-may be deemed "method-like" (e.g. computing the length of a ``List``).  In such
-cases, the non-trivial ``val`` may be declared at a later point in the file as
-logical member ordering would dictate.  This rule *only* applies to ``val`` and
-``lazy val``!  It becomes very difficult to track changing aliases if ``var``
-declarations are strewn throughout class file.
 
 .. toctree::
 
-   methods/index
+   ordering
+   methods
    fields
-   function_values/index
+
+
+Function Values
+---------------
+
+Scala provides a number of different syntactic options for declaring function
+values.  For example, the following declarations are exactly equivalent:
+
+1. ``val f1 = { (a: Int, b: Int) => a + b }``
+2. ``val f2 = (a: Int, b: Int) => a + b``
+3. ``val f3 = (_: Int) + (_: Int)``
+4. ``val f4: (Int, Int) => Int = { _ + _ }``
+
+Of these styles, (1) and (4) are to be preferred at all times.  (2) appears shorter
+in this example, but whenever the function value spans multiple lines (as is
+normally the case), this syntax becomes extremely unweildy.  Similarly, (3) is
+concise, but obtuse.  It is difficult for the untrained eye to decipher the fact
+that this is even producing a function value.
+
+When styles (1) and (4) are used exclusively, it becomes very easy to distinguish
+places in the source code where function values are used.  Both styles make use
+of curly braces (``{}``), allowing those characters to be a visual cue that a
+function value may be involved at some level.
+
+.. toctree::
+
+   function_values/spacing
+   function_values/multi_expression_functions

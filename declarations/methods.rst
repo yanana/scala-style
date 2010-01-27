@@ -1,5 +1,5 @@
 Methods
--------
+~~~~~~~
 
 Methods should be declared according to the following pattern::
     
@@ -14,6 +14,6 @@ should use Scala's syntactic sugar to avoid accidentally confusing return types:
     
 .. toctree::
 
-   modifiers
-   currying
-   higher_order_functions
+   methods/modifiers
+   methods/currying
+   methods/higher_order_functions
