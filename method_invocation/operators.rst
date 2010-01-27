@@ -19,3 +19,6 @@ invoked using infix notation, delimited by spaces::
     
 Such operators are fairly rare, however, and should be avoided during API design.
 
+Finally, the use of the ``/:`` and ``:\`` shoudl be avoided in preference to the more explicit
+``foldLeft`` and ``foldRight`` method of ``Iterator``.  The right-associativity of the ``/:`` 
+can lead to extremely confusing code, at the benefit of saving a few characters.
