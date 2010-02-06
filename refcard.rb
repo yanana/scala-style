@@ -218,6 +218,11 @@ seq toList // BLANK LINE AFTER
 
 EOS
 
+doc.bounding_box([0,7.5.in], :width => 10.in, :height => 24) do
+  head(doc)
+  doc.text("Scala Style Reference Card", :align => :center)
+end
+
   sub(doc)
   doc.text("General (con't)")
   code(doc)
