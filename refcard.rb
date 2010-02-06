@@ -36,7 +36,7 @@ doc.bounding_box([0,7.5.in], :width => 10.in, :height => 24) do
 end
 doc.column_box([0,7.5.in - 24], :width => 10.in, :height => 7.5.in - 24, :columns => 3) do
   sub(doc)
-  doc.text("Indenting")
+  doc.text("Indenting & Spacing")
   code(doc)
   doc.text <<EOS
 
@@ -48,19 +48,20 @@ def doit { // K&R style bracing
   val x = 4 + 5 + 8 + 4 + 
     3 + 6 + 5 + 9
 
-  // if you can't fit the args
-  // on one line, indent 2 spaces
+  // 2 space indent when wrapping
   myVeryLongMethodCall(
     takes,
-    aLot,
-    OF,
-    arguments,
-    "right")
+    lotsOf,
+    arguments)
+
 }
+
+// spacing for readability is...
+def important(f: (Boolean, Any) => Int)
 
 EOS
   sub(doc)
-  doc.text("Braces")
+  doc.text("Braces & Parens")
   code(doc)
   doc.text <<EOS
 
@@ -83,6 +84,16 @@ foo match {
   }
 }
 
+// keep parens with code, LISP-style
+val y = (4 + foo + 6 +
+  bar(x) + 17)
+
+// no parens for Arity-1
+def method(f: Int => Float)
+
+// parens for anything else
+def method(f: (Int,Double) => Float)
+
 EOS
   sub(doc)
   doc.text("Naming")
@@ -97,12 +108,6 @@ class UseCamelCase {
   // this creates accessor and mutator
   var dontUseGetAndSet
 }
-
-EOS
-  sub(doc)
-  doc.text("Naming")
-  code(doc)
-  doc.text <<EOS
 
 trait AlsoUseCamelCase
 
@@ -124,6 +129,8 @@ class cloneable extends StaticAnnotation
 // one-liners can use short names
 def add(a:Int, b:Int) = a + b
 
+def !@#%^ = "avoid operators"
+
 EOS
   sub(doc)
   doc.text("Declarations")
@@ -132,29 +139,180 @@ EOS
 
 class Declarations {
 
+  // use type inference where possible
   var fieldsGo = "together"
   val without = "newlines"
-  // if you can't use type inference
-  val spaceAfterColon: Boolean = _
+  // can't infer here...
+  var spaceAfterColon: Boolean = _
 
-  def methodsHaveBlank = "lines"
+  // explicit return type
+  def methodsHaveBlank:String = "lines"
 
-  def betweenThem = "for clarity"
+  private def betweenThem = "for clarity"
 
   // order modifiers like so
-  @Annotations
-  override protected final def foo() = {
-  }
+  @annotations
+  override protected final def foo() = ""
+
+EOS
+
+  sub(doc)
+  doc.text("Declarations (con't)")
+  code(doc)
+  doc.text <<EOS
 
   def curriedMethod(a: Int)(b: Int) = 
     "looks like this"
 }
-
 // braces make it clear for most functions
 val func = { (a:Int, b:Int) => a + b }
 
-// really short ones should look like this
+// unless really really short
 val tight = (Int,Int) => _ + _
+
+// Let Scala infer str's type
+someList map { str => str.toInt }
+
+// short duck types on one line
+def duck(a: { def close():Unit })
+
+// for longer, make a type alias
+private type Closeable = {
+  def open(r:Resource)
+  def close:Resource
+}
+def duck(a: Closeable)
+
+class WorstCase(
+  for:Long
+  class:Declaration
+  is:ToWrap)
+    extends Sensible
+    with FourSpaces
+    with Judgement {
+}
+
+// handy for call-site
+def higherOrder(a:Int)(curryLast: Int => Int)
+
+EOS
+  sub(doc)
+  doc.text("General")
+  code(doc)
+  doc.text <<EOS
+
+for {
+  x <- comprehension
+  y <- style
+} yield "use braces" + x/y
+
+for (x <- loop, y <- style) {
+  println("use parens")
+}
+
+// calling Arity-0 methods
+sideEffects() // have parens
+pureFunction
+
+seq toList // BLANK LINE AFTER
+
+EOS
+
+  sub(doc)
+  doc.text("General (con't)")
+  code(doc)
+  doc.text <<EOS
+
+// only omit '.' on last call
+seq.toList map { _.toUpperCase }
+
+// infix notation for pure functions
+names mkString ","
+
+// not for side-effects!
+javaList add "item"
+
+// acceptable and idiomatic
+xs map { _.toString } filter { _.length > 5 }
+
+// sybolic operators always infix
+val all = some ++ others
+
+EOS
+
+  sub(doc)
+  doc.text("Files")
+  code(doc)
+  doc.text <<EOS
+
+Inbox.scala:
+
+  // one class per file
+  class Inbox { ... }
+
+  // companion objects are included
+  object Inbox { ... }
+
+// lowercase multi-units
+multiUnit.scala:
+
+  // All types should be in same file
+  sealed trait Shape
+
+  case class Circle extends Shape
+  case class Square extends Shape
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EOS
+
+  sub(doc)
+  doc.text("Controversial")
+  code(doc)
+  doc.text <<EOS
+
+// has side effects
+def foo1() = "always call me with parens"
+// DOESN'T have side effects
+def foo2 = "never call me with parens"
+
+// how to declare a Unit method?
+def someDay {
+  "explicitly avoiding '='"
+}
+
+def othersInsist:Unit = {
+  "consistent with other"
+  "declarations"
+}
+
+// avoid right-associatives
+(0/:numbers)(_+_) 
+
+EOS
+  sub(doc)
+  doc.text("More Info")
+  code(doc)
+  doc.text <<EOS
+
+http://www.scala-lang.org
+
+http://davetron5000.github.com/scala-style
 EOS
 end
 doc.render_file("refcard.pdf")
