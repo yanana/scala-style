@@ -12,18 +12,19 @@ constructor argument on its own line, indented **four** spaces::
     }
 
     class Person(
-      name: String,
-      age: Int,
-      birthdate: Date,
-      astrologicalSign: String,
-      shoeSize: Int,
-      favoriteColor: java.awt.Color) {
+        name: String,
+        age: Int,
+        birthdate: Date,
+        astrologicalSign: String,
+        shoeSize: Int,
+        favoriteColor: java.awt.Color) {
+      def firstMethod = ...
     }
 
 If a class/object/trait extends anything, the same general rule applies, put
 it one one line unless it goes over about 100 characters, and then indent **two**
-spaces with each item being on its own line; this provides visual separation
-between constructor arguments and extensions.::
+spaces with each item being on its own line and **four** spaces for
+extensions; this provides visual separation between constructor arguments and extensions.::
 
     class Person(
       name: String,
