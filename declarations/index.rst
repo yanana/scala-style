@@ -22,21 +22,21 @@ constructor argument on its own line, indented **four** spaces::
     }
 
 If a class/object/trait extends anything, the same general rule applies, put
-it one one line unless it goes over about 100 characters, and then indent **two**
-spaces with each item being on its own line and **four** spaces for
+it one one line unless it goes over about 100 characters, and then indent **four**
+spaces with each item being on its own line and **two** spaces for
 extensions; this provides visual separation between constructor arguments and extensions.::
 
     class Person(
-      name: String,
-      age: Int,
-      birthdate: Date,
-      astrologicalSign: String,
-      shoeSize: Int,
-      favoriteColor: java.awt.Color) 
-        extends Entity
-        with Logging
-        with Identifiable
-        with Serializable {
+        name: String,
+        age: Int,
+        birthdate: Date,
+        astrologicalSign: String,
+        shoeSize: Int,
+        favoriteColor: java.awt.Color) 
+      extends Entity
+      with Logging
+      with Identifiable
+      with Serializable {
     }
 
 
