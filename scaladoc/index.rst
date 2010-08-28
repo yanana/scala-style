@@ -1,9 +1,15 @@
 Scaladoc
 ========
 
-It is important to provide documentation for all packages, classes, traits, and methods and other members.  
+It is important to provide documentation for all packages, classes, traits, methods, and other members.  
 Scaladoc generally follows the conventions of Javadoc, however there are many additional features to make
 writing scaladoc simpler.
+
+In general, you want to worry more about substance and writing style than in formatting.  Scaladocs need to be useful
+to new users of the code as well as experienced users.  Achieving this is very simple: increase the level
+of detail and explanation as you write, starting from a terse summary (useful for experienced users as reference), while
+providing deeper examples in the detailed sections (which can be ignored by experienced users, but can
+be invaluable for newcomers).
 
 The general format for a scaladoc comment should be as follows::
 
@@ -28,16 +34,19 @@ It is important to maintain a consistent style with scaladoc.  It is also import
 to both those unfamiliar with your code and experienced users who just need a quick reference. Here
 are some general guidelines:
 
-* Get to the point as quickly as possible, for example, says "returns true if some condition" instead of "if some condition return true"
-* Try to format the first sentence of a method as "Returns XXX", as in "Returns the first object of the List", as opposed to "this method returns" or "get the first" etc.  Methods typically **return** things
+* Get to the point as quickly as possible. For example, say "returns true if some condition" instead of "if some condition return true".
+* Try to format the first sentence of a method as "Returns XXX", as in "Returns the first object of the List", as opposed to "this method returns" or "get the first" etc.  Methods typically **return** things.
 * This same goes for classes; omit "This class does XXX"; just say "Does XXX"
 * Always create links to mentioned Scala classes always using the square-bracket syntax, e.g. ``[[scala.Option]]``
-* If the documentation of a method is a one line description of what that method returns, do not repeat it with an @return annotation.
-* If the documentation of a method is longer than one sentence, summarize it's return value in an @return, even if it seems superfluous to do so.
+* Summarize a method's return value in the ``@return`` annotation, leaving a longer description for the main scaladoc.
+* If the documentation of a method is a one line description of what that method returns, do not repeat it with an ``@return`` annotation.
 * Document what the method *does do* not what the method *should do*.  In other words, say "returns the result of applying f to x" rather than "return the result of applying f to x".  Subtle, but important.
 * When referring to the instance of the class, use "this XXX", or "this" and not "the XXX".  For objects, say "this object".
 * Make code examples consistent with this guide.
 * Use the wiki-style syntax instead of HTML wherever possible.
+* Examples should use either full code listings or the REPL, depending on what is needed (the simplest way to
+  include REPL code is to develop the examples in the REPL and paste it into the scaladoc).
+* Make liberal use of ``@macro`` to commonly-repeated values that require special formatting.
 
 Packages
 --------
@@ -93,7 +102,7 @@ Classes
 ~~~~~~~
 
 If a class should be created using it's companion object, indicate as such after the description of the class 
-(though provide details of construction in the companion object).  Unfortunately, there is no way to create
+(though leave the details of construction to the companion object).  Unfortunately, there is no way to create
 a link to the companion object, however the generated scaladoc will create a link for you.
 
 If the class should be created using a constructor, document it using the ``@constructor`` syntax::
@@ -113,7 +122,8 @@ Depending on the complexity of your class, provide an example of common usage.
 Objects
 ~~~~~~~
 
-Since objects can be used for a variety of purposes, it is important to document how to use each object.
+Since objects can be used for a variety of purposes, it is important to document *how* to use the
+object (e.g. as a factory, for implicit methods).
 If this object is a factory for other objects, indicate as such here, deferring the specifics to
 the scaladoc for the ``apply`` method(s).  If your object *doesn't* use ``apply`` as a factory
 method, be sure to indicate the actual method names.
@@ -123,4 +133,15 @@ Traits
 
 After the overview of what the trait does, provide an overview of the methods and types that must be
 specified in classes that mix in the trait.  If there are known classes using the trait, reference them.
+
+Methods and Other Members
+-------------------------
+
+Document all methods.  As for other documentable entities, the first sentence should be a summary of what the method does.
+Subsequent sentences explain in further detail.  Document each parameter as well as each type parameter (with 
+``@tparam``).  For curried functions, consider providing more detailed examples regarding the expected or
+idiomatic usage.  For implicit parameters, take special to care to explain where these parameters will come from
+and if the user needs to do any extra work to make sure the parameters will be available.
+
+
 
