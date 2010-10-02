@@ -38,6 +38,4 @@ overriding any nested package resolves::
 Do not overuse this directive.  In general, nested package resolves are a good
 thing and very helpful in reducing import clutter.  Using ``_root_`` not only
 negates their benefit, but also introduces extra clutter in and of itself.
-Developers using IntelliJ IDEA should be particularly wary as its Scala plugin
-prefixes *every* import using ``_root_`` by default.
 
