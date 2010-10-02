@@ -1,6 +1,9 @@
 #!/usr/bin/ruby
 
 require 'rubygems'
+# Later versions don't respect leading whitespace, which
+# messes up all the formatting
+gem 'prawn', '=0.6.3'
 require 'prawn'
 require 'prawn/measurement_extensions'
 
@@ -129,7 +132,7 @@ class cloneable extends StaticAnnotation
 // one-liners can use short names
 def add(a:Int, b:Int) = a + b
 
-def !@#%^ = "avoid operators"
+def !@#%^ = "avoid crazy operators"
 
 EOS
   sub(doc)
@@ -228,6 +231,7 @@ end
   code(doc)
   doc.text <<EOS
 
+
 // only omit '.' on last call
 seq.toList map { _.toUpperCase }
 
@@ -236,15 +240,69 @@ names mkString ","
 
 // not for side-effects!
 javaList add "item"
+// correct:
+javaList.add("item")
 
 // acceptable and idiomatic
 xs map { _.toString } filter { _.length > 5 }
 
-// sybolic operators always infix
+// symbolic operators always infix
 val all = some ++ others
 
 EOS
 
+  sub(doc)
+  doc.text("Scaladoc")
+  code(doc)
+  doc.text <<EOS
+
+package com.example
+/**
+ * Document package objects (this 
+ * is com.example.util)
+ */
+package object util {}
+
+/**
+ * Short description.
+ *
+ * Longer description, using `wiki`
+ * markup *bold*, _italic_.
+ * {{{
+ * var some = example()
+ * goesHere()
+ * }}}
+ * @constructor is here to
+ * @param x constructor param
+ */
+class ClassDoc(x:Int) {
+
+  /**
+   * Same style for methods.
+   * @param document all parameters
+   * @param even if they seem obvious
+   * @tparam T Type params, too
+   */
+   def doit[T](document:String, 
+               even:Boolean) = {}
+}
+
+
+EOS
+
+  sub(doc)
+  doc.text("Scaladoc (con't)")
+  code(doc)
+  doc.text <<EOS
+
+/**
+ * Indicate how to use this object.
+ * Is it a factory?  A namespace?
+ */
+object ClassDoc {}
+
+
+EOS
   sub(doc)
   doc.text("Files")
   code(doc)
@@ -267,34 +325,12 @@ multiUnit.scala:
   case class Circle extends Shape
   case class Square extends Shape
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 EOS
 
   sub(doc)
   doc.text("Controversial")
   code(doc)
   doc.text <<EOS
-
-// has side effects
-def foo1() = "always call me with parens"
-// DOESN'T have side effects
-def foo2 = "never call me with parens"
 
 // how to declare a Unit method?
 def someDay {
@@ -306,7 +342,7 @@ def othersInsist:Unit = {
   "declarations"
 }
 
-// avoid right-associatives
+// avoid right-associatives?
 (0/:numbers)(_+_) 
 
 EOS
