@@ -89,7 +89,7 @@ sure to reference classes using the square-bracket notation::
      * complex: my.package.complex.Complex = 4 + 3i
      * }}}
      */
-     package complex {}
+    package complex {}
 
 Classes, Objects, and Traits
 ----------------------------
@@ -114,7 +114,7 @@ If the class should be created using a constructor, document it using the ``@con
      * @param name the person's name
      * @param age the person's age in years
      */
-	class Person(name:String, age:Int) {
+    class Person(name:String, age:Int) {
     }
 
 Depending on the complexity of your class, provide an example of common usage.  
@@ -137,7 +137,7 @@ specified in classes that mix in the trait.  If there are known classes using th
 Methods and Other Members
 -------------------------
 
-Document all methods.  As for other documentable entities, the first sentence should be a summary of what the method does.
+Document all methods.  As with other documentable entities, the first sentence should be a summary of what the method does.
 Subsequent sentences explain in further detail.  Document each parameter as well as each type parameter (with 
 ``@tparam``).  For curried functions, consider providing more detailed examples regarding the expected or
 idiomatic usage.  For implicit parameters, take special to care to explain where these parameters will come from
