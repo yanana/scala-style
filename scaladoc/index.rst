@@ -19,7 +19,7 @@ The general format for a scaladoc comment should be as follows::
      * This is further documentation of what we're documenting.  It should
      * provide more details as to how this works and what it does.
      */
-    def myMethods = {}
+    def myMethod = {}
 
 For methods and other type members where the only documentation needed is a simple, short description, 
 this format can be used::
@@ -37,7 +37,7 @@ are some general guidelines:
 * Get to the point as quickly as possible. For example, say "returns true if some condition" instead of "if some condition return true".
 * Try to format the first sentence of a method as "Returns XXX", as in "Returns the first object of the List", as opposed to "this method returns" or "get the first" etc.  Methods typically **return** things.
 * This same goes for classes; omit "This class does XXX"; just say "Does XXX"
-* Always create links to mentioned Scala classes always using the square-bracket syntax, e.g. ``[[scala.Option]]``
+* Create links to referenced Scala Library classes using the square-bracket syntax, e.g. ``[[scala.Option]]``
 * Summarize a method's return value in the ``@return`` annotation, leaving a longer description for the main scaladoc.
 * If the documentation of a method is a one line description of what that method returns, do not repeat it with an ``@return`` annotation.
 * Document what the method *does do* not what the method *should do*.  In other words, say "returns the result of applying f to x" rather than "return the result of applying f to x".  Subtle, but important.
@@ -46,13 +46,13 @@ are some general guidelines:
 * Use the wiki-style syntax instead of HTML wherever possible.
 * Examples should use either full code listings or the REPL, depending on what is needed (the simplest way to
   include REPL code is to develop the examples in the REPL and paste it into the scaladoc).
-* Make liberal use of ``@macro`` to commonly-repeated values that require special formatting.
+* Make liberal use of ``@macro`` to refer to commonly-repeated values that require special formatting.
 
 Packages
 --------
 
-Provide scaladoc for each package.  This goes in ``package.scala`` in your package's directory and looks like so 
-for the package ``parent.package.name.mypackage``::
+Provide scaladoc for each package.  This goes in a file named ``package.scala`` in your package's directory and looks like so 
+(for the package ``parent.package.name.mypackage``)::
 
     package parent.package.name
 
@@ -102,8 +102,9 @@ Classes
 ~~~~~~~
 
 If a class should be created using it's companion object, indicate as such after the description of the class 
-(though leave the details of construction to the companion object).  Unfortunately, there is no way to create
-a link to the companion object, however the generated scaladoc will create a link for you.
+(though leave the details of construction to the companion object).  Unfortunately, there is currently no way to create
+a link to the companion object inline, however the generated scaladoc will create a link for you in the class documentation
+output.
 
 If the class should be created using a constructor, document it using the ``@constructor`` syntax::
 
@@ -126,7 +127,37 @@ Since objects can be used for a variety of purposes, it is important to document
 object (e.g. as a factory, for implicit methods).
 If this object is a factory for other objects, indicate as such here, deferring the specifics to
 the scaladoc for the ``apply`` method(s).  If your object *doesn't* use ``apply`` as a factory
-method, be sure to indicate the actual method names.
+method, be sure to indicate the actual method names::
+
+    /**
+     * Factory for [[mypackage.Person]] instances.
+     */
+    object Person {
+      /** Create a person with a given name and age.
+       * @param name their name
+       * @param age the age of the person to create
+       */
+      def apply(name:String,age:Int) = {}
+      /** Create a person with a given name and birthdate
+       * @param name their name
+       * @param birthDate the person's birthdate
+       * @return a new Person instance with the age determined by the 
+       * birthdate and current date.
+       */
+      def apply(name:String,birthDate:java.util.Date) = {}
+    }
+
+If your object holds implicit conversions, provide an example in the scaladoc::
+
+    /**
+     * Implicits conversions and helpers for [[mypackage.Complex]] instances.
+     *
+     * {{{
+     * import ComplexImplicits._
+     * val c:Complex = 4 + 3.i
+     * }}}
+     */
+    object ComplexImplicits {}
 
 Traits
 ~~~~~~
