@@ -24,6 +24,7 @@ Contents:
    control_structures/index
    method_invocation/index
    files/index
+   scaladoc/index
 
 Indices and tables
 ==================
