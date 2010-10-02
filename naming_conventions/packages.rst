@@ -2,14 +2,28 @@ Packages
 --------
 
 Scala packages should follow the Java package naming conventions::
-    
-    // right!
-    package com.novell.coolness
-    
+
     // wrong!
     package coolness
     
-Please note that this convention does occaisionally lead to problems when combined
+    // right!
+    package com.novell.coolness
+
+    // right, for package object com.novell.coolness
+    package com.novell
+    /**
+     * Provides classes related to coolness
+     */
+    package object coolness {
+    }
+    
+    
+
+Versions Prior to 2.8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Scala 2.8 changes how packages worked.  For 2.7 and earlier, 
+please note that this convention does occaisionally lead to problems when combined
 with Scala's nested packages feature.  For example::
     
     import net.liftweb._
