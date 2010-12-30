@@ -1,7 +1,7 @@
 Multi-Unit Files
 ----------------
 
-Despite what was said above, there are some important situations which warrent the
+Despite what was said above, there are some important situations which warrant the
 inclusion of multiple compilation units within a single file.  One common example
 is that of a sealed trait and several sub-classes (often emulating the ADT
 language feature available in functional languages)::

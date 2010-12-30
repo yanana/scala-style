@@ -60,7 +60,7 @@ values.  For example, the following declarations are exactly equivalent:
 
 Of these styles, (1) and (4) are to be preferred at all times.  (2) appears shorter
 in this example, but whenever the function value spans multiple lines (as is
-normally the case), this syntax becomes extremely unweildy.  Similarly, (3) is
+normally the case), this syntax becomes extremely unwieldy.  Similarly, (3) is
 concise, but obtuse.  It is difficult for the untrained eye to decipher the fact
 that this is even producing a function value.
 

@@ -53,7 +53,7 @@ property they represent.  For example::
     
 If we were to attempt to adopt this convention within Scala while observing the
 accessor naming conventions given above, the Scala compiler would complain about
-a naming colision between the ``name`` field and the ``name`` method.  There are
+a naming collision between the ``name`` field and the ``name`` method.  There are
 a number of ways to avoid this problem and the community has yet to standardize
 on any one of them.  The following illustrates one of the less error-prone
 conventions::
