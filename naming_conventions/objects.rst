@@ -3,7 +3,7 @@ Objects
 
 Objects follow the class naming convention (camelCase with a capital first letter)
 except when attempting to mimic a package.  This is a fairly rare case, but it
-does come up on occaision::
+does come up on occasion::
     
     object ast {
       sealed trait Expr

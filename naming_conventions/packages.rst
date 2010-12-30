@@ -23,7 +23,7 @@ Versions Prior to 2.8
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Scala 2.8 changes how packages worked.  For 2.7 and earlier, 
-please note that this convention does occaisionally lead to problems when combined
+please note that this convention does occasionally lead to problems when combined
 with Scala's nested packages feature.  For example::
     
     import net.liftweb._
