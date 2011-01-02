@@ -1,4 +1,6 @@
 *.sw?
+.buildinfo
+.DS_Store
 ScalaStyleGuide.html
 ScalaStyleGuide.pdf
 index.html
