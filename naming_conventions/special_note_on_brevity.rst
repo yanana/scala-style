@@ -13,7 +13,5 @@ lines.  Very few local fields are ever used (including parameters), and so there
 is no need to contrive long, descriptive names.  This convention substantially
 improves the brevity of most Scala sources.
 
-This convention only applies to method parameters and local fields.  Anything
-which affects the public interface of a class should be given a fully-descriptive
-name.
-
+This convention only applies to parameters of very simple methods (and local fields for 
+very simply classes); everything in the public interface should be descriptive.
