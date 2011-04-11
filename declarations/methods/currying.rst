@@ -41,7 +41,7 @@ line)::
 
 
     protected def forResource(resourceInfo:Any)
-                             (f:(JsonNode) => Any)
-                             (implicit urlCreator:URLCreator, configurer:OAuthConfiguration) = {
+                             (f: (JsonNode) => Any)
+                             (implicit urlCreator: URLCreator, configurer: OAuthConfiguration) = {
      
 
