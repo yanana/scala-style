@@ -1,4 +1,5 @@
-Accessors/Mutators
+.. Accessors/Mutators
+アクセッサ・ミューテータ
 ~~~~~~~~~~~~~~~~~~
 
 Scala does *not* follow the Java convention of prepending ``set``/``get`` to
