@@ -28,21 +28,19 @@ Rubyとは違い，Scalaはメソッドが括弧を伴って\ *宣言されて�
 アクセッサ（フィールドでも，論理プロパティでも）として働くメソッドは，副作用がある場合を除いて括弧\ *なし*\ で宣言するべきです。\
 RubyとLiftは\ ``!``\ を使って副作用があることを示しますが，括弧の使用の方が好ましいです\ [#dsl_note]_\ 。
 
-Further, the callsite should follow the declaration; if declared with parentheses,
-call with parentheses.  While there is temptation to save a few characters,
-if you follow this guideline, your code will be *much* more readable and 
-maintainable.
+.. Further, the callsite should follow the declaration; if declared with parentheses,
+   call with parentheses.  While there is temptation to save a few characters,
+   if you follow this guideline, your code will be *much* more readable and 
+   maintainable.
 さらには，呼び出し側は宣言に従うべきです。つまり，括弧付きで定義されていれば括弧付きで呼び出すということです。\
 わずかな文字数であっても節約したくなる誘惑にかられるかもしれませんが，このガイドラインに従えばコードは\ *とても*\ 読みやすく，\
 メンテナンスしやすくなります。
 
 ::
 
-..   // doesn't change state, call as birthdate
   // 状態は変えません。birthdateの形で呼びます。
   def birthdate = firstName
 
-..   // updates our internal state, call as age()
   // 内部状態を更新します。age()の形で呼びます。
   def age() = {
     _age = updateAge(birthdate)
@@ -51,7 +49,7 @@ maintainable.
 
 .. _arity: http://en.wikipedia.org/wiki/Arity
 
-.. rubric:: Footnotes
+.. rubric:: 脚注
 
 .. .. [#dsl_note] Please note that fluid APIs and internal domain-specific languages have a
                tendency to break the guidelines given below for the sake of syntax.  Such
