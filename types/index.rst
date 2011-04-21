@@ -1,4 +1,5 @@
-Types
+.. Types
+型
 =====
 
 .. toctree::

@@ -1,5 +1,5 @@
 .. Arity-1
-1引数
+1引数の函数型
 ~~~~~~~
 
 .. Scala has a special syntax for declaring types for functions of arity-1.  For
