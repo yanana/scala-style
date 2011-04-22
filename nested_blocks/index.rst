@@ -1,4 +1,5 @@
-Nested Blocks
+.. Nested Blocks
+ネストしたブロック
 =============
 
 .. toctree::
