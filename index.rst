@@ -32,6 +32,7 @@ Scalaのスタイルにおけるガイドラインの概略を示す事を意図
    method_invocation/index
    files/index
    scaladoc/index
+   changelog
 
 Indices and tables
 ==================
