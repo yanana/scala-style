@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Suffix Notation &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>後置記法 &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,23 +24,23 @@
     <script type="text/javascript" src="../../static/doctools.js"></script>
     <script type="text/javascript" src="../../static/translations.js"></script>
     <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
-    <link rel="up" title="Arity-0" href="index.html" />
-    <link rel="next" title="Arity-1" href="../arity1/index.html" />
-    <link rel="prev" title="Arity-0" href="index.html" /> 
+    <link rel="up" title="引数のないメソッド" href="index.html" />
+    <link rel="next" title="1引数のメソッド" href="../arity1/index.html" />
+    <link rel="prev" title="引数のないメソッド" href="index.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../arity1/index.html" title="Arity-1"
+          <a href="../arity1/index.html" title="1引数のメソッド"
              accesskey="N">次へ</a></li>
         <li class="right" >
-          <a href="index.html" title="Arity-0"
+          <a href="index.html" title="引数のないメソッド"
              accesskey="P">前へ</a> |</li>
         <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Method Invocation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Arity-0</a> &raquo;</li> 
+          <li><a href="../index.html" >メソッド呼び出し</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">引数のないメソッド</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -49,54 +49,41 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="suffix-notation">
-<h1>Suffix Notation<a class="headerlink" href="#suffix-notation" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Scala allows methods of arity-0 to be invoked using suffix notation:</p>
+  <div class="section" id="id1">
+<h1>後置記法<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Scalaでは，arity-0のメソッドは後置記法で呼び出す事が可能です。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">names</span><span class="o">.</span><span class="n">toList</span>
 
-<span class="c1">// is the same as</span>
+<span class="c1">// は次と同様</span>
 
 <span class="n">names</span> <span class="n">toList</span>
 </pre></div>
 </div>
-<p>This style should be used with great care.  In order to avoid ambiguity in Scala&#8217;s
-grammar, any method which is invoked via suffix notation must be the <em>last</em> item
-on a given line.  Also, the following line must be completely empty, otherwise
-Scala&#8217;s parser will assume that the suffix notation is actually infix and will
-(incorrectly) attempt to incorporate the contents of the following line into the
-suffix invocation:</p>
+<p>この記法の使用には十分注意が必要です。構文解析の曖昧さを回避するため，後置記法で呼び出されるメソッドは，<strong>必ず</strong>行の最後に位置しなければなりません。また，後続の行は空行でなくてはならず，さもなければScalaのパーサはそのメソッドを（誤って）中値記法とみなし，後続の行をまとめて解析しようとします。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">names</span> <span class="n">toList</span>
-<span class="k">val</span> <span class="n">answer</span> <span class="k">=</span> <span class="mi">42</span>        <span class="c1">// will not compile!</span>
+<span class="k">val</span> <span class="n">answer</span> <span class="k">=</span> <span class="mi">42</span>        <span class="c1">// コンパイルできない！</span>
 </pre></div>
 </div>
-<p>This style should only be used on methods with no side-effects, preferably ones
-which were declared without parentheses (see above).  The most common acceptable
-case for this syntax is as the last operation in a chain of infix method calls:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// acceptable and idiomatic</span>
+<p>メソッドの後置記法は，副作用の無い，なるべくなら（上述の）括弧なしで宣言されたメソッドに対して使用するべきです。この記法の最もよく見られるケースは，中値記法のメソッドチェインの最後の操作としての用法です。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 慣用的かつ許容し得る用法</span>
 <span class="n">names</span> <span class="n">map</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">toUpperCase</span> <span class="o">}</span> <span class="n">filter</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">}</span> <span class="n">toStream</span>
 </pre></div>
 </div>
-<p>In this case, suffix notation must be used with the <tt class="docutils literal"><span class="pre">toStream</span></tt> function,
-otherwise a separate value assignment would have been required.  However, under
-less specialized circumstances, suffix notation should be avoided:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// wrong!</span>
+<p>この場合，<tt class="docutils literal"><span class="pre">toStream</span></tt>函数は後置記法で呼び出される必要があり，そうでなければ，分離した値の代入が必要になります。しかし，より一般的に言えば，後置記法は避けるべき場合の方が多いでしょう。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 誤り！</span>
 <span class="k">val</span> <span class="n">ls</span> <span class="k">=</span> <span class="n">names</span> <span class="n">toList</span>
 
-<span class="c1">// right!</span>
+<span class="c1">// 正しい！</span>
 <span class="k">val</span> <span class="n">ls</span> <span class="k">=</span> <span class="n">names</span><span class="o">.</span><span class="n">toList</span>
 </pre></div>
 </div>
-<p>The primary exception to this rule is for domain-specific languages.  One very
-common use of suffix notation which goes against the above is converting a
-<tt class="docutils literal"><span class="pre">String</span></tt> value into a <tt class="docutils literal"><span class="pre">Regexp</span></tt>:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// tolerated</span>
+<p>このルールに対する最も主要な例外が，ドメイン特化言語です。上記のルールに反する，多々見受けられる用法の1つが<tt class="docutils literal"><span class="pre">String</span></tt>値の<tt class="docutils literal"><span class="pre">Regexp</span></tt>への変換です。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 許容し得る用法</span>
 <span class="k">val</span> <span class="n">reg</span> <span class="k">=</span> <span class="s">&quot;&quot;&quot;\d+(\.\d+)?&quot;&quot;&quot;</span><span class="n">r</span>
 </pre></div>
 </div>
-<p>In this example, <tt class="docutils literal"><span class="pre">r</span></tt> is actually a method available on type <tt class="docutils literal"><span class="pre">String</span></tt> via an
-implicit conversion.  It is being called in suffix notation for brevity.
-However, the following would have been just as acceptable:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// safer</span>
+<p>この例で，<tt class="docutils literal"><span class="pre">r</span></tt>は暗黙の変換を通じて<tt class="docutils literal"><span class="pre">String</span></tt>型で利用可能なメソッドであり，簡潔さのために後置記法で呼び出されています。しかし，次の例の方がより好ましいでしょう。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// より安全な呼び出し方</span>
 <span class="k">val</span> <span class="n">reg</span> <span class="k">=</span> <span class="s">&quot;&quot;&quot;\d+(\.\d+)?&quot;&quot;&quot;</span><span class="o">.</span><span class="n">r</span>
 </pre></div>
 </div>
@@ -110,10 +97,10 @@ However, the following would have been just as acceptable:</p>
         <div class="sphinxsidebarwrapper">
   <h4>前のトピックへ</h4>
   <p class="topless"><a href="index.html"
-                        title="前の章へ">Arity-0</a></p>
+                        title="前の章へ">引数のないメソッド</a></p>
   <h4>次のトピックへ</h4>
   <p class="topless"><a href="../arity1/index.html"
-                        title="次の章へ">Arity-1</a></p>
+                        title="次の章へ">1引数のメソッド</a></p>
 
   <h3>このページ</h3>
   <ul class="this-page-menu">
@@ -150,14 +137,14 @@ However, the following would have been just as acceptable:</p>
       <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../arity1/index.html" title="Arity-1"
+          <a href="../arity1/index.html" title="1引数のメソッド"
              >次へ</a></li>
         <li class="right" >
-          <a href="index.html" title="Arity-0"
+          <a href="index.html" title="引数のないメソッド"
              >前へ</a> |</li>
         <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Method Invocation</a> &raquo;</li>
-          <li><a href="index.html" >Arity-0</a> &raquo;</li> 
+          <li><a href="../index.html" >メソッド呼び出し</a> &raquo;</li>
+          <li><a href="index.html" >引数のないメソッド</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

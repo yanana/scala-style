@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Arity-1 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>1引数のメソッド &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,22 +24,22 @@
     <script type="text/javascript" src="../../static/doctools.js"></script>
     <script type="text/javascript" src="../../static/translations.js"></script>
     <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
-    <link rel="up" title="Method Invocation" href="../index.html" />
-    <link rel="next" title="Higher-Order Functions" href="higher_order_functions.html" />
-    <link rel="prev" title="Suffix Notation" href="../arity0/suffix_notation.html" /> 
+    <link rel="up" title="メソッド呼び出し" href="../index.html" />
+    <link rel="next" title="高階函数" href="higher_order_functions.html" />
+    <link rel="prev" title="後置記法" href="../arity0/suffix_notation.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="higher_order_functions.html" title="Higher-Order Functions"
+          <a href="higher_order_functions.html" title="高階函数"
              accesskey="N">次へ</a></li>
         <li class="right" >
-          <a href="../arity0/suffix_notation.html" title="Suffix Notation"
+          <a href="../arity0/suffix_notation.html" title="後置記法"
              accesskey="P">前へ</a> |</li>
         <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">Method Invocation</a> &raquo;</li> 
+          <li><a href="../index.html" accesskey="U">メソッド呼び出し</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -48,31 +48,29 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="arity-1">
-<h1>Arity-1<a class="headerlink" href="#arity-1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Scala has a special syntax for invoking methods of arity-1 (one argument):</p>
+  <div class="section" id="id1">
+<h1>1引数のメソッド<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Scalaには1引数のメソッドを呼び出す特別な構文があります。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">names</span><span class="o">.</span><span class="n">mkString</span><span class="o">(</span><span class="s">&quot;,&quot;</span><span class="o">)</span>
 
-<span class="c1">// is the same as</span>
+<span class="c1">// は次と等しい</span>
 
 <span class="n">names</span> <span class="n">mkString</span> <span class="s">&quot;,&quot;</span>
 </pre></div>
 </div>
-<p>This syntax is formally known as &#8220;infix notation&#8221;.  It should <em>only</em> be used for
-purely-functional methods (methods with no side-effects) - such as <tt class="docutils literal"><span class="pre">mkString</span></tt> -
-or methods which take functions as parameters - such as <tt class="docutils literal"><span class="pre">foreach</span></tt>:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// right!</span>
+<p>この構文は正式には「中値記法」として知られており，純粋函数的な（副作用の無い）メソッド - <tt class="docutils literal"><span class="pre">mkString</span></tt>の様な - もしくはパラメータとして函数を取るメソッド - <tt class="docutils literal"><span class="pre">foreach</span></tt>の様な - に<strong>のみ</strong>使用されるべきです。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 正しい！</span>
 <span class="n">names</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">n</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">}</span>
 <span class="n">names</span> <span class="n">mkString</span> <span class="s">&quot;,&quot;</span>
 <span class="n">optStr</span> <span class="n">getOrElse</span> <span class="s">&quot;&lt;empty&gt;&quot;</span>
 
-<span class="c1">// wrong!</span>
+<span class="c1">// 誤り！</span>
 <span class="n">javaList</span> <span class="n">add</span> <span class="n">item</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="higher_order_functions.html">Higher-Order Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="higher_order_functions.html">高階函数</a></li>
 </ul>
 </div>
 </div>
@@ -85,10 +83,10 @@ or methods which take functions as parameters - such as <tt class="docutils lite
         <div class="sphinxsidebarwrapper">
   <h4>前のトピックへ</h4>
   <p class="topless"><a href="../arity0/suffix_notation.html"
-                        title="前の章へ">Suffix Notation</a></p>
+                        title="前の章へ">後置記法</a></p>
   <h4>次のトピックへ</h4>
   <p class="topless"><a href="higher_order_functions.html"
-                        title="次の章へ">Higher-Order Functions</a></p>
+                        title="次の章へ">高階函数</a></p>
 
   <h3>このページ</h3>
   <ul class="this-page-menu">
@@ -125,13 +123,13 @@ or methods which take functions as parameters - such as <tt class="docutils lite
       <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="higher_order_functions.html" title="Higher-Order Functions"
+          <a href="higher_order_functions.html" title="高階函数"
              >次へ</a></li>
         <li class="right" >
-          <a href="../arity0/suffix_notation.html" title="Suffix Notation"
+          <a href="../arity0/suffix_notation.html" title="後置記法"
              >前へ</a> |</li>
         <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Method Invocation</a> &raquo;</li> 
+          <li><a href="../index.html" >メソッド呼び出し</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

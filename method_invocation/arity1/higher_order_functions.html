@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Higher-Order Functions &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>高階函数 &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,9 +24,9 @@
     <script type="text/javascript" src="../../static/doctools.js"></script>
     <script type="text/javascript" src="../../static/translations.js"></script>
     <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
-    <link rel="up" title="Arity-1" href="index.html" />
+    <link rel="up" title="1引数のメソッド" href="index.html" />
     <link rel="next" title="演算子" href="../operators.html" />
-    <link rel="prev" title="Arity-1" href="index.html" /> 
+    <link rel="prev" title="1引数のメソッド" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -36,11 +36,11 @@
           <a href="../operators.html" title="演算子"
              accesskey="N">次へ</a></li>
         <li class="right" >
-          <a href="index.html" title="Arity-1"
+          <a href="index.html" title="1引数のメソッド"
              accesskey="P">前へ</a> |</li>
         <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Method Invocation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Arity-1</a> &raquo;</li> 
+          <li><a href="../index.html" >メソッド呼び出し</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">1引数のメソッド</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -49,20 +49,17 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="higher-order-functions">
-<h1>Higher-Order Functions<a class="headerlink" href="#higher-order-functions" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>As noted, methods which take functions as parameters (such as <tt class="docutils literal"><span class="pre">map</span></tt> or <tt class="docutils literal"><span class="pre">foreach</span></tt>)
-should be invoked using infix notation.  It is also <em>possible</em> to invoke such
-methods in the following way:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="n">names</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">toUpperCase</span> <span class="o">}</span>     <span class="c1">// wrong!</span>
+  <div class="section" id="id1">
+<h1>高階函数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>前述の通り，函数をパラメータとして取るメソッド（<tt class="docutils literal"><span class="pre">map</span></tt>や<tt class="docutils literal"><span class="pre">foreach</span></tt>の様な）は中値記法で呼び出すべきですが，次の様に呼び出すことも<strong>可能</strong>ではあります。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="n">names</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">toUpperCase</span> <span class="o">}</span>     <span class="c1">// 誤り！</span>
 </pre></div>
 </div>
-<p>This style is <em>not</em> the accepted standard!  The reason to avoid this style is
-for situations where more than one invocation must be chained together:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// wrong!</span>
+<p>この呼び出し方は標準としては受け入れられ<strong>ません</strong>！というのも，メソッドチェインの場合</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 誤り！</span>
 <span class="n">names</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">toUpperCase</span> <span class="o">}.</span><span class="n">filter</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">}</span>
 
-<span class="c1">// right!</span>
+<span class="c1">// 正しい！</span>
 <span class="n">names</span> <span class="n">map</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">toUpperCase</span> <span class="o">}</span> <span class="n">filter</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">}</span>
 </pre></div>
 </div>
@@ -71,7 +68,8 @@ Scala&#8217;s grammar.  The sub-expression <tt class="docutils literal"><span cl
 isolation looks for all the world like we are invoking the <tt class="docutils literal"><span class="pre">filter</span></tt> method on
 a function value.  However, we are actually invoking <tt class="docutils literal"><span class="pre">filter</span></tt> on the result of
 the <tt class="docutils literal"><span class="pre">map</span></tt> method, which takes the function value as a parameter.  This syntax
-is confusing and often discouraged in Ruby, but it is shunned outright in Scala.</p>
+is confusing and often discouraged in Ruby, but it is shunned outright in Scala.
+これらは共に意図通りに動作しますが，前者は，極めて非直観的なScalaの文法の欠点を不当に利用したものです。途中の<tt class="docutils literal"><span class="pre">{</span> <span class="pre">_.toUpperCase</span> <span class="pre">}.filter</span></tt>の部分を取り出して見ると，<tt class="docutils literal"><span class="pre">filter</span></tt>メソッドを函数値に対して呼び出している様に見えますが，実際には函数値をパラメータに取る<tt class="docutils literal"><span class="pre">map</span></tt>メソッドの結果に対して<tt class="docutils literal"><span class="pre">filter</span></tt>メソッドを呼び出しています。この構文は混乱の元であり，Rubyではたびたび使わない様に言われるものですが，Scalaではあからさまに敬遠されます。</p>
 </div>
 
 
@@ -82,7 +80,7 @@ is confusing and often discouraged in Ruby, but it is shunned outright in Scala.
         <div class="sphinxsidebarwrapper">
   <h4>前のトピックへ</h4>
   <p class="topless"><a href="index.html"
-                        title="前の章へ">Arity-1</a></p>
+                        title="前の章へ">1引数のメソッド</a></p>
   <h4>次のトピックへ</h4>
   <p class="topless"><a href="../operators.html"
                         title="次の章へ">演算子</a></p>
@@ -125,11 +123,11 @@ is confusing and often discouraged in Ruby, but it is shunned outright in Scala.
           <a href="../operators.html" title="演算子"
              >次へ</a></li>
         <li class="right" >
-          <a href="index.html" title="Arity-1"
+          <a href="index.html" title="1引数のメソッド"
              >前へ</a> |</li>
         <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Method Invocation</a> &raquo;</li>
-          <li><a href="index.html" >Arity-1</a> &raquo;</li> 
+          <li><a href="../index.html" >メソッド呼び出し</a> &raquo;</li>
+          <li><a href="index.html" >1引数のメソッド</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

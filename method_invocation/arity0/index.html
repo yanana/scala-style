@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Arity-0 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>引数のないメソッド &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,22 +24,22 @@
     <script type="text/javascript" src="../../static/doctools.js"></script>
     <script type="text/javascript" src="../../static/translations.js"></script>
     <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
-    <link rel="up" title="Method Invocation" href="../index.html" />
-    <link rel="next" title="Suffix Notation" href="suffix_notation.html" />
-    <link rel="prev" title="Method Invocation" href="../index.html" /> 
+    <link rel="up" title="メソッド呼び出し" href="../index.html" />
+    <link rel="next" title="後置記法" href="suffix_notation.html" />
+    <link rel="prev" title="メソッド呼び出し" href="../index.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="suffix_notation.html" title="Suffix Notation"
+          <a href="suffix_notation.html" title="後置記法"
              accesskey="N">次へ</a></li>
         <li class="right" >
-          <a href="../index.html" title="Method Invocation"
+          <a href="../index.html" title="メソッド呼び出し"
              accesskey="P">前へ</a> |</li>
         <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">Method Invocation</a> &raquo;</li> 
+          <li><a href="../index.html" accesskey="U">メソッド呼び出し</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -48,27 +48,21 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="arity-0">
-<h1>Arity-0<a class="headerlink" href="#arity-0" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Scala allows the omission of parentheses on methods of arity-0 (no arguments):</p>
+  <div class="section" id="id1">
+<h1>引数のないメソッド<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Scalaでは，引数のないメソッドの呼び出しにおいて括弧を省略することができます。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">reply</span><span class="o">()</span>
 
-<span class="c1">// is the same as</span>
+<span class="c1">// は次と等しい</span>
 
 <span class="n">reply</span>
 </pre></div>
 </div>
-<p>However, this syntax should <em>only</em> be used when the method in question has no
-side-effects (purely-functional).  In other words, it would be acceptable to
-omit parentheses when calling <tt class="docutils literal"><span class="pre">queue.size</span></tt>, but not when calling <tt class="docutils literal"><span class="pre">println()</span></tt>.
-This convention mirrors the method declaration convention given above.</p>
-<p>Religiously observing this convention will <em>dramatically</em> improve code readability
-and will make it much easier to understand at a glance the most basic operation
-of any given method.  Resist the urge to omit parentheses simply to save two
-characters!</p>
+<p>しかし，この構文は，そのメソッドが副作用の無い（純粋函数的な）場合に<strong>のみ</strong>使うべきです。つまり，<tt class="docutils literal"><span class="pre">queue.size</span></tt>を呼び出す時には括弧を省略できるが，<tt class="docutils literal"><span class="pre">println()</span></tt>ではできないということです。この慣習は，上述のメソッド宣言における規約と対をなします。</p>
+<p>この規約を忠実に守ることによって，コードの可読性は<strong>劇的に</strong>向上し，単に2文字書く労力を節約するために括弧を省略したくなる衝動を抑えて下さい！</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="suffix_notation.html">Suffix Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="suffix_notation.html">後置記法</a></li>
 </ul>
 </div>
 </div>
@@ -81,10 +75,10 @@ characters!</p>
         <div class="sphinxsidebarwrapper">
   <h4>前のトピックへ</h4>
   <p class="topless"><a href="../index.html"
-                        title="前の章へ">Method Invocation</a></p>
+                        title="前の章へ">メソッド呼び出し</a></p>
   <h4>次のトピックへ</h4>
   <p class="topless"><a href="suffix_notation.html"
-                        title="次の章へ">Suffix Notation</a></p>
+                        title="次の章へ">後置記法</a></p>
 
   <h3>このページ</h3>
   <ul class="this-page-menu">
@@ -121,13 +115,13 @@ characters!</p>
       <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="suffix_notation.html" title="Suffix Notation"
+          <a href="suffix_notation.html" title="後置記法"
              >次へ</a></li>
         <li class="right" >
-          <a href="../index.html" title="Method Invocation"
+          <a href="../index.html" title="メソッド呼び出し"
              >前へ</a> |</li>
         <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Method Invocation</a> &raquo;</li> 
+          <li><a href="../index.html" >メソッド呼び出し</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

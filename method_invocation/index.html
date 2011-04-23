@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Method Invocation &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>メソッド呼び出し &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../static/doctools.js"></script>
     <script type="text/javascript" src="../static/translations.js"></script>
     <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../index.html" />
-    <link rel="next" title="Arity-0" href="arity0/index.html" />
+    <link rel="next" title="引数のないメソッド" href="arity0/index.html" />
     <link rel="prev" title="ささいな条件文" href="../control_structures/trivial_conditionals.html" /> 
   </head>
   <body>
@@ -32,7 +32,7 @@
       <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="arity0/index.html" title="Arity-0"
+          <a href="arity0/index.html" title="引数のないメソッド"
              accesskey="N">次へ</a></li>
         <li class="right" >
           <a href="../control_structures/trivial_conditionals.html" title="ささいな条件文"
@@ -46,13 +46,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="method-invocation">
-<h1>Method Invocation<a class="headerlink" href="#method-invocation" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Generally speaking, method invocation in Scala follows Java conventions.  In
-other words, there should not be a space between the invocation target and the
-dot (<tt class="docutils literal"><span class="pre">.</span></tt>), nor a space between the dot and the method name, nor should there
-be any space between the method name and the argument-delimiters (parentheses).
-Each argument should be separated by a single space <em>following</em> the comma (<tt class="docutils literal"><span class="pre">,</span></tt>):</p>
+  <div class="section" id="id1">
+<h1>メソッド呼び出し<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Scalaでは，メソッド呼び出しは一般にJavaの慣習に従います。言い方を変えれば，呼び出し先とドット（<tt class="docutils literal"><span class="pre">.</span></tt>）の間，ドットとメソッド名の間，そしてメソッド名と引数を囲う括弧の間にスペースを入れないということです。各引数は，カンマ（<tt class="docutils literal"><span class="pre">,</span></tt>）に<strong>続く</strong>スペース1つで区切られます。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">foo</span><span class="o">(</span><span class="mi">42</span><span class="o">,</span> <span class="n">bar</span><span class="o">)</span>
 <span class="n">target</span><span class="o">.</span><span class="n">foo</span><span class="o">(</span><span class="mi">42</span><span class="o">,</span> <span class="n">bar</span><span class="o">)</span>
 <span class="n">target</span><span class="o">.</span><span class="n">foo</span><span class="o">()</span>
@@ -60,12 +56,12 @@ Each argument should be separated by a single space <em>following</em> the comma
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="arity0/index.html">Arity-0</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arity0/suffix_notation.html">Suffix Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arity0/index.html">引数のないメソッド</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arity0/suffix_notation.html">後置記法</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="arity1/index.html">Arity-1</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arity1/higher_order_functions.html">Higher-Order Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arity1/index.html">1引数のメソッド</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arity1/higher_order_functions.html">高階函数</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="operators.html">演算子</a></li>
@@ -84,7 +80,7 @@ Each argument should be separated by a single space <em>following</em> the comma
                         title="前の章へ">ささいな条件文</a></p>
   <h4>次のトピックへ</h4>
   <p class="topless"><a href="arity0/index.html"
-                        title="次の章へ">Arity-0</a></p>
+                        title="次の章へ">引数のないメソッド</a></p>
 
   <h3>このページ</h3>
   <ul class="this-page-menu">
@@ -121,7 +117,7 @@ Each argument should be separated by a single space <em>following</em> the comma
       <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="arity0/index.html" title="Arity-0"
+          <a href="arity0/index.html" title="引数のないメソッド"
              >次へ</a></li>
         <li class="right" >
           <a href="../control_structures/trivial_conditionals.html" title="ささいな条件文"
