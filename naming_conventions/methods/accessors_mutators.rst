@@ -5,7 +5,7 @@
 .. Scala does *not* follow the Java convention of prepending ``set``/``get`` to
    mutator and accessor methods (respectively).  Instead, the following conventions
    are used:
-Scalaは，ミューテータ・アクセッサメソッドに\ ``set``/``get``\ を前置するJavaの慣習に従い\ *ません*\ 。\
+Scalaは，ミューテータ・アクセッサメソッドに\ ``set``/``get``\ を前置するJavaの慣習に従い\ **ません**\ 。\
 代わりに，以下の慣例があります。
 
 .. * For accessors of *most* boolean and non-boolean properties, the name of the
@@ -19,8 +19,8 @@ Scalaは，ミューテータ・アクセッサメソッドに\ ``set``/``get``\
      "``_=``" appended.  As long as a corresponding accessor with that particular
      property name is defined on the enclosing type, this convention will enable
      a call-site mutation syntax which mirrors assignment.
-* *殆どの*\ ブーリアン・非ブーリアンプロパティのアクセッサにおいて，プロパティ名と同じメソッド名とします。
-* *いくらかの*\ ブーリアンプロパティのアクセッサにおいて，プロパティ名の語頭を大文字にして\ ``is``\ を\
+* **殆どの**\ ブーリアン・非ブーリアンプロパティのアクセッサにおいて，プロパティ名と同じメソッド名とします。
+* **いくらかの**\ ブーリアンプロパティのアクセッサにおいて，プロパティ名の語頭を大文字にして\ ``is``\ を\
   前置したもの（e.g. ``isEmpty``\ ）をメソッド名とすることもできます。\
   ただし，これは対応するミューテータが無い場合にのみ適用すべきです。\
   ブーリアンアクセッサにおける\ Lift_\ の"``_?``"を前置する慣習は，Liftフレームワーク以外では用いられて\

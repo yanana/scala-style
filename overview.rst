@@ -5,7 +5,8 @@
 .. Generally speaking, Scala seeks to mimic Java conventions to ease interoperability.
    When in doubt regarding the idiomatic way to express a particular concept, adopt
    conventions and idioms from the following languages (in this order):
-相互運用性の容易性を確保するため，一般にScalaはJavaの規約を真似ています。特定の概念におけるイディオムがある場合には，規約とイディオムを次の言語から採用しています（この順番で）。
+相互運用性の容易性を確保するため，一般にScalaはJavaの規約を真似ています。\
+特定の概念におけるイディオムがある場合には，規約とイディオムを次の言語から採用しています（この順番で）。
 
 
 * Java
@@ -16,7 +17,9 @@
 * Ruby
 * Python
 
-例えば，クラスやメソッドの命名では，SMLの型注釈やHaskellの型パラメータ（大文字では無く小文字を使う），またRubyの非ブーリアン値へのアクセサメソッドの命名規約では無く，Javaの規約に従うべきです。Scalaは正にハイブリッド言語と言えるでしょう!
+例えば，クラスやメソッドの命名では，SMLの型注釈やHaskellの型パラメータ（大文字では無く小文字を使う），\
+またRubyの非ブーリアン値へのアクセサメソッドの命名規約では無く，Javaの規約に従うべきです。\
+Scalaは正にハイブリッド言語と言えるでしょう！
 
 
 .. For example, you should use Java's naming conventions for classes and methods,

@@ -6,7 +6,8 @@
    more), it is often necessary to wrap the method invocation onto multiple lines.
    In such cases, put all arguments on a line by themselves, indented two spaces
    from the current indent level::
-多数の引数（5つ以上の）をとるメソッドを呼び出す際，複数行に分割した方が良い場合がよくあります。このとき，現在のインデントレベルからスペース2つ分インデントして全ての引数を配置してください。 ::
+多数の引数（5つ以上の）をとるメソッドを呼び出す際，複数行に分割した方が良い場合がよくあります。\
+このとき，現在のインデントレベルからスペース2つ分インデントして全ての引数を配置してください。 ::
     
     foo(
       someVeryLongFieldName,
@@ -23,9 +24,11 @@
    when each parameter would have to be indented more than 50 spaces to achieve
    alignment.  In such cases, the invocation itself should be moved to the next
    line and indented two spaces::
-この類の呼び出しを避けるため，行の長さにも大いに気を配る必要があります。より具体的に言えば，各パラメータを整えるのに50あまりものスペースが必要となる場合にはこのような呼び出しは避けるべきです。この場合，呼び出しそのものを次の行に移動して2スペース分インデントすると良いでしょう。 ::
+この類の呼び出しを避けるため，行の長さにも大いに気を配る必要があります。より具体的に言えば，各パラメータを整えるのに\
+50あまりものスペースが必要となる場合にはこのような呼び出しは避けるべきです。この場合，呼び出しそのものを次の行に移動して\
+2スペース分インデントすると良いでしょう。 ::
     
-    // right!
+    // 正しい！
     val myOnerousAndLongFieldNameWithNoRealPoint = 
       foo(
         someVeryLongFieldName,
@@ -33,7 +36,7 @@
         "this is a string",
         3.1415)
     
-    // wrong!
+    // 誤り！
     val myOnerousAndLongFieldNameWithNoRealPoint = foo(someVeryLongFieldName,
                                                        andAnotherVeryLongFieldName,
                                                        "this is a string",
@@ -41,5 +44,5 @@
                                                        
 .. Better yet, just try to avoid any method which takes more than two or three
    parameters!
-更に，3，4個以上の引数をとるメソッドを使わないようにすれば言うことはありません!
+更に，3，4個以上の引数をとるメソッドを使わないようにすれば言うことはありません！
 

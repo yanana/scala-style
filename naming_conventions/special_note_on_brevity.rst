@@ -1,10 +1,10 @@
 .. Special Note on Brevity
-表現の簡潔さに関する特記
+表現の簡潔さに関する特記事項
 -----------------------
 
 .. Because of Scala's roots in the functional languages, it is quite normal for
    local field names to be extremely brief::
-函数型言語を背景に持つことから，ローカルフィールドの名前が非常にそっけない事は日常茶飯事です。 ::
+函数型言語をその背景に持つことから，Scalaではローカルフィールドの名前が非常にそっけない事は日常茶飯事です。 ::
     
     def add(a: Int, b: Int) = a + b
     
@@ -14,7 +14,7 @@
    lines.  Very few local fields are ever used (including parameters), and so there
    is no need to contrive long, descriptive names.  This convention substantially
    improves the brevity of most Scala sources.
-Javaの様な言語ではこれは良くない慣習とされていますが，Scalaにおいては\ *良い*\ 習慣です。\
+Javaの様な言語ではこれは良くない慣習とされていますが，Scalaにおいては\ **良い**\ 習慣です。\
 この規約が奏功する理由は，適切に書かれたScalaのメソッドは，単一の式で，稀に数行に渡る程度で相当に短くなるためです。\
 ローカルフィールドはおよそ使われることは無いため，長く記述的な名称を設計する必要はありません。\
 この規約は殆どのScalaソースコードの簡潔性を大いに向上します。

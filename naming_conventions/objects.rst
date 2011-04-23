@@ -17,5 +17,5 @@
     
 .. In *all* other cases, objects should be named according to the class naming
    convention.
-その他\ *全ての*\ ケースでは，オブジェクトはクラスの命名規則に従います。
+その他\ **全ての**\ ケースでは，オブジェクトはクラスの命名規則に従います。
 

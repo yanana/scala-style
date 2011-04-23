@@ -10,7 +10,7 @@
     
 .. This section is not a comprehensive guide to idiomatic methods in Scala.  Further
    information may be found in the method invocation section.
-この節はScalaにおける慣用的なメソッドの包括的なガイドではありません。更なる情報は「メソッド呼び出し」の節をご覧ください。
+この節はScalaにおける慣用的なメソッドの包括的なガイドではありません。更なる情報は「メソッド呼び出し」の節を見てください。
 
 .. toctree::
 

@@ -9,7 +9,7 @@
    to values or by using the `pipeline operator`_.  However, this is not always a
    practical solution.
 単一の式が読みづらい程に長くなってしまったら（大抵，80文字を越えるとそうなる），\
-\ *好ましい*\ アプローチは，中間結果値を用意したり `パイプライン演算子`_ \
+\ **好ましい**\ アプローチは，中間結果値を用意したり `パイプライン演算子`_ \
 を使ってその式を分割することです。しかし，この手法が必ずしも常に現実的な解決策となる訳ではありません。
 
 .. When it is absolutely necessary to wrap an expression across more than one line,
@@ -17,7 +17,7 @@
    remember that Scala requires each "wrap line" to either have an unclosed
    parenthetical or to end with an infix binary function or operator in which the
    right parameter is not given::
-式を二つ以上の行に分割する必要に迫られたら，続く行はスペース二つ分\ *最初の行*\ からインデントするべきです。\
+式を二つ以上の行に分割する必要に迫られたら，続く行はスペース二つ分\ **最初の行**\ からインデントするべきです。\
 また，Scalaは各「ラップされる行」に閉じていない括弧か，適切なパラメータが渡されていない中置の2項関数または演算子\
 を要求する事も頭の片隅に留めておいてください。 ::
     

@@ -4,7 +4,7 @@
 
 .. Unlike Ruby, Scala attaches significance to whether or not a method is *declared*
    with parentheses (only applicable to methods of arity_-0).  For example::
-Rubyとは違い，Scalaはメソッドが括弧を伴って\ *宣言されている*\ かどうか（引数が無いメソッドにのみ該当します）\
+Rubyとは違い，Scalaはメソッドが括弧を伴って\ **宣言されている**\ かどうか（引数が無いメソッドにのみ該当します）\
 に意味を持たせています。例えば， ::
     
     def foo1() = ...
@@ -15,7 +15,7 @@ Rubyとは違い，Scalaはメソッドが括弧を伴って\ *宣言されて�
    called with or without the parentheses, ``foo2`` *may not* be called
    *with* parentheses.
 これらはコンパイル時に事なるメソッドとして解釈されます。\ ``foo1``\ は括弧があろうと無かろうと呼び出す事ができますが，\
-``foo2``\ は括弧\ *あり*\ では呼び出す事が\ *できません*\ 。
+``foo2``\ は括弧\ **あり**\ では呼び出す事が\ **できません**\ 。
 
 .. Thus, it is actually quite important that proper guidelines be observed regarding
    when it is appropriate to declare a method without parentheses and when it is
@@ -25,7 +25,7 @@ Rubyとは違い，Scalaはメソッドが括弧を伴って\ *宣言されて�
 .. Methods which act as accessors of any sort (either encapsulating a field or a
    logical property) should be declared *without* parentheses except if they have side effects.
    While Ruby and Lift use a ``!`` to indicate this, the usage of parens is preferred [#dsl_note]_.  
-アクセッサ（フィールドでも，論理プロパティでも）として働くメソッドは，副作用がある場合を除いて括弧\ *なし*\ で宣言するべきです。\
+アクセッサ（フィールドでも，論理プロパティでも）として働くメソッドは，副作用がある場合を除いて括弧\ **なし**\ で宣言するべきです。\
 RubyとLiftは\ ``!``\ を使って副作用があることを示しますが，括弧の使用の方が好ましいです\ [#dsl_note]_\ 。
 
 .. Further, the callsite should follow the declaration; if declared with parentheses,
@@ -33,7 +33,7 @@ RubyとLiftは\ ``!``\ を使って副作用があることを示しますが，
    if you follow this guideline, your code will be *much* more readable and 
    maintainable.
 さらには，呼び出し側は宣言に従うべきです。つまり，括弧付きで定義されていれば括弧付きで呼び出すということです。\
-わずかな文字数であっても節約したくなる誘惑にかられるかもしれませんが，このガイドラインに従えばコードは\ *とても*\ 読みやすく，\
+わずかな文字数であっても節約したくなる誘惑にかられるかもしれませんが，このガイドラインに従えばコードは\ **とても**\ 読みやすく，\
 メンテナンスしやすくなります。
 
 ::
