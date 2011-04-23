@@ -1,7 +1,14 @@
 この文書について
 ==============
 
-この文書はScala Style Guideの日本語訳です。
+この文書はScala Style Guideの日本語訳です。なにはともあれ公開します。
+
+成果物
+=====
+
+* オンライン - http://yanana.github.com/scala-style
+
+※PDF生成にpdflatexを使っているので，PDF生成できていません…
 
 Read It
 =======
