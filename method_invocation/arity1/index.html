@@ -1,0 +1,142 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Arity-1 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <script type="text/javascript" src="../../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
+    <link rel="up" title="Method Invocation" href="../index.html" />
+    <link rel="next" title="Higher-Order Functions" href="higher_order_functions.html" />
+    <link rel="prev" title="Suffix Notation" href="../arity0/suffix_notation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="higher_order_functions.html" title="Higher-Order Functions"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="../arity0/suffix_notation.html" title="Suffix Notation"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Method Invocation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arity-1">
+<h1>Arity-1<a class="headerlink" href="#arity-1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Scala has a special syntax for invoking methods of arity-1 (one argument):</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="n">names</span><span class="o">.</span><span class="n">mkString</span><span class="o">(</span><span class="s">&quot;,&quot;</span><span class="o">)</span>
+
+<span class="c1">// is the same as</span>
+
+<span class="n">names</span> <span class="n">mkString</span> <span class="s">&quot;,&quot;</span>
+</pre></div>
+</div>
+<p>This syntax is formally known as &#8220;infix notation&#8221;.  It should <em>only</em> be used for
+purely-functional methods (methods with no side-effects) - such as <tt class="docutils literal"><span class="pre">mkString</span></tt> -
+or methods which take functions as parameters - such as <tt class="docutils literal"><span class="pre">foreach</span></tt>:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// right!</span>
+<span class="n">names</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">n</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">}</span>
+<span class="n">names</span> <span class="n">mkString</span> <span class="s">&quot;,&quot;</span>
+<span class="n">optStr</span> <span class="n">getOrElse</span> <span class="s">&quot;&lt;empty&gt;&quot;</span>
+
+<span class="c1">// wrong!</span>
+<span class="n">javaList</span> <span class="n">add</span> <span class="n">item</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="higher_order_functions.html">Higher-Order Functions</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="../arity0/suffix_notation.html"
+                        title="前の章へ">Suffix Notation</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="higher_order_functions.html"
+                        title="次の章へ">Higher-Order Functions</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../sources/method_invocation/arity1/index.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="higher_order_functions.html" title="Higher-Order Functions"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="../arity0/suffix_notation.html" title="Suffix Notation"
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Method Invocation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>複数のパラメータリスト &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <script type="text/javascript" src="../../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
+    <link rel="up" title="メソッド" href="../methods.html" />
+    <link rel="next" title="高階函数" href="higher_order_functions.html" />
+    <link rel="prev" title="修飾子" href="modifiers.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="higher_order_functions.html" title="高階函数"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="modifiers.html" title="修飾子"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >宣言</a> &raquo;</li>
+          <li><a href="../methods.html" accesskey="U">メソッド</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>複数のパラメータリスト<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>一般に，そうする理由があるときにだけ複数のパラメータリストを使うべきです。複数のパラメータリストを持つメソッドや函数は，宣言も呼び出し側のコードも冗長になり，経験の少ない開発者にとっては判り辛くなります。</p>
+<p>複数のパラメータリストを使うべき主な理由が3つあります。</p>
+<ol class="arabic simple">
+<li>流れるようなインターフェース</li>
+</ol>
+<ol class="arabic simple">
+<li>暗黙のパラメータ</li>
+</ol>
+<ol class="arabic simple">
+<li>型推論のため</li>
+</ol>
+<p>複雑なDSLや長い型名を扱うとき，宣言を1行に収めるのが難しくなります。こういう場合には，パラメータリストを1行毎に揃えます（i.e. 1行に収められないときは，1行に1つずつ配置します）。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">protected</span> <span class="k">def</span> <span class="n">forResource</span><span class="o">(</span><span class="n">resourceInfo</span><span class="k">:</span><span class="kt">Any</span><span class="o">)</span>
+                         <span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">JsonNode</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="nc">Any</span><span class="o">)</span>
+                         <span class="o">(</span><span class="k">implicit</span> <span class="n">urlCreator</span><span class="k">:</span> <span class="kt">URLCreator</span><span class="o">,</span> <span class="n">configurer</span><span class="k">:</span> <span class="kt">OAuthConfiguration</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="modifiers.html"
+                        title="前の章へ">修飾子</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="higher_order_functions.html"
+                        title="次の章へ">高階函数</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../sources/declarations/methods/currying.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="higher_order_functions.html" title="高階函数"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="modifiers.html" title="修飾子"
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >宣言</a> &raquo;</li>
+          <li><a href="../methods.html" >メソッド</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

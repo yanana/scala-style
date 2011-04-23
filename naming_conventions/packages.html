@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>パッケージ &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../index.html" />
+    <link rel="up" title="命名規約" href="index.html" />
+    <link rel="next" title="メソッド" href="methods/index.html" />
+    <link rel="prev" title="オブジェクト" href="objects.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="methods/index.html" title="メソッド"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="objects.html" title="オブジェクト"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">命名規約</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>パッケージ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ScalaのパッケージはJavaにおけるパッケージの命名規則に従います。:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 誤り！</span>
+<span class="k">package</span> <span class="nn">coolness</span>
+
+<span class="c1">// 正しい！</span>
+<span class="k">package</span> <span class="nn">com.novell.coolness</span>
+
+<span class="c1">// パッケージオブジェクトcom.novell.coolnessとして正しい。</span>
+<span class="k">package</span> <span class="nn">com.novell</span>
+<span class="cm">/**</span>
+<span class="cm"> * coolnessに関連したクラスを提供する。</span>
+<span class="cm"> */</span>
+<span class="k">package</span> <span class="nn">object</span> <span class="n">coolness</span> <span class="o">{</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>2.8以前のバージョン<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Scala2.8でパッケージの動作は変更されました。2.7以前のバージョンでは，ネストしたパッケージと組み合わさった時に時折問題を起こす事があることに気をつけてください。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">import</span> <span class="nn">net.liftweb._</span>
+</pre></div>
+</div>
+<p>このimport文は，<tt class="docutils literal"><span class="pre">net</span></tt>パッケージが<tt class="docutils literal"><span class="pre">java.net</span></tt>パッケージ（や同様のもの）を参照してしまい，解決に失敗するでしょう。この動作を補正するには，<tt class="docutils literal"><span class="pre">_root</span></tt>ディレクティブを使って，ネストしたパッケージ解決を上書きしてimport文を完全修飾する事が必要になります。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">import</span> <span class="nn">_root_.net.liftweb._</span>
+</pre></div>
+</div>
+<p>このディレクティブを多用しないでください。一般に，ネストしたパッケージ解決は煩雑なimport文を減らす優れた手段となります。<tt class="docutils literal"><span class="pre">_root_</span></tt>を使うと，その利点を帳消しにするだけでなく，更に乱雑なimport文を増やす結果になってしまいます。</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">パッケージ</a><ul>
+<li><a class="reference internal" href="#id2">2.8以前のバージョン</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="objects.html"
+                        title="前の章へ">オブジェクト</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="methods/index.html"
+                        title="次の章へ">メソッド</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/naming_conventions/packages.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="methods/index.html" title="メソッド"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="objects.html" title="オブジェクト"
+             >前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" >命名規約</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

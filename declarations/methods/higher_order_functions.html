@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>高階函数 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <script type="text/javascript" src="../../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
+    <link rel="up" title="メソッド" href="../methods.html" />
+    <link rel="next" title="フィールド" href="../fields.html" />
+    <link rel="prev" title="複数のパラメータリスト" href="currying.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../fields.html" title="フィールド"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="currying.html" title="複数のパラメータリスト"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >宣言</a> &raquo;</li>
+          <li><a href="../methods.html" accesskey="U">メソッド</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>高階函数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>It&#8217;s worth keeping in mind when declaring higher-order functions the fact that
+Scala allows a somewhat nicer syntax for such functions at call-site when the
+function parameter is curried as the last argument.  For example, this is the
+<tt class="docutils literal"><span class="pre">foldl</span></tt> function in SML::
+高階函数を宣言する際には，函数パラメータが最後にあってカリー化されるときに許される，呼び出し側にとって喜ばしい構文規則がある事を心に留めておくといいでしょう。例えば，これはSMLの<tt class="docutils literal"><span class="pre">foldl</span></tt>函数です。</p>
+<div class="highlight-scala"><pre>fun foldl (f: ('b * 'a) -&gt; 'b) (init: 'b) (ls: 'a list) = ...</pre>
+</div>
+<p>Scalaでは，この真逆が好ましいスタイルです。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foldLeft</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">ls</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">init</span><span class="k">:</span> <span class="kt">B</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">B</span><span class="o">,</span> <span class="kt">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>函数パラメータを<em>最後</em>にすることで，呼び出し側の構文を次のようにできます。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="n">foldLeft</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">))(</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}</span>
+</pre></div>
+</div>
+<p>この呼び出しで，函数値は括弧で囲われておらず，それゆえ函数値が函数そのもの（<tt class="docutils literal"><span class="pre">foldLeft</span></tt>）から分離しています。その簡潔さから，このスタイルは好ましいと言えます。</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="currying.html"
+                        title="前の章へ">複数のパラメータリスト</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="../fields.html"
+                        title="次の章へ">フィールド</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../sources/declarations/methods/higher_order_functions.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../fields.html" title="フィールド"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="currying.html" title="複数のパラメータリスト"
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >宣言</a> &raquo;</li>
+          <li><a href="../methods.html" >メソッド</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

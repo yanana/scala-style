@@ -1,0 +1,138 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Arity-0 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <script type="text/javascript" src="../../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
+    <link rel="up" title="Method Invocation" href="../index.html" />
+    <link rel="next" title="Suffix Notation" href="suffix_notation.html" />
+    <link rel="prev" title="Method Invocation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="suffix_notation.html" title="Suffix Notation"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Method Invocation"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Method Invocation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arity-0">
+<h1>Arity-0<a class="headerlink" href="#arity-0" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Scala allows the omission of parentheses on methods of arity-0 (no arguments):</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="n">reply</span><span class="o">()</span>
+
+<span class="c1">// is the same as</span>
+
+<span class="n">reply</span>
+</pre></div>
+</div>
+<p>However, this syntax should <em>only</em> be used when the method in question has no
+side-effects (purely-functional).  In other words, it would be acceptable to
+omit parentheses when calling <tt class="docutils literal"><span class="pre">queue.size</span></tt>, but not when calling <tt class="docutils literal"><span class="pre">println()</span></tt>.
+This convention mirrors the method declaration convention given above.</p>
+<p>Religiously observing this convention will <em>dramatically</em> improve code readability
+and will make it much easier to understand at a glance the most basic operation
+of any given method.  Resist the urge to omit parentheses simply to save two
+characters!</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="suffix_notation.html">Suffix Notation</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="../index.html"
+                        title="前の章へ">Method Invocation</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="suffix_notation.html"
+                        title="次の章へ">Suffix Notation</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../sources/method_invocation/arity0/index.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="suffix_notation.html" title="Suffix Notation"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Method Invocation"
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Method Invocation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

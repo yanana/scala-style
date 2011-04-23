@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>行の折り返し &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../index.html" />
+    <link rel="up" title="インデント" href="index.html" />
+    <link rel="next" title="多数の引数をとるメソッド" href="methods_with_numerous_arguments.html" />
+    <link rel="prev" title="インデント" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="methods_with_numerous_arguments.html" title="多数の引数をとるメソッド"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="index.html" title="インデント"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">インデント</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>行の折り返し<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>単一の式が読みづらい程に長くなってしまったら（大抵，80文字を越えるとそうなる），<strong>好ましい</strong>アプローチは，中間結果値を用意したり <a href="#id2"><span class="problematic" id="id3">`パイプライン演算子`_</span></a> を使ってその式を分割することです。しかし，この手法が必ずしも常に現実的な解決策となる訳ではありません。</p>
+<p>式を二つ以上の行に分割する必要に迫られたら，続く行はスペース二つ分<strong>最初の行</strong>からインデントするべきです。また，Scalaは各「ラップされる行」に閉じていない括弧か，適切なパラメータが渡されていない中置の2項関数または演算子を要求する事も頭の片隅に留めておいてください。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span>
+  <span class="mi">7</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">11</span> <span class="o">+</span> <span class="mi">12</span> <span class="o">+</span> <span class="mi">13</span> <span class="o">+</span> <span class="mi">14</span> <span class="o">+</span>
+  <span class="mi">15</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">+</span> <span class="mi">17</span> <span class="o">+</span> <span class="mi">18</span> <span class="o">+</span> <span class="mi">19</span> <span class="o">+</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>この演算子が無いと，ラップするつもりの行末にScalaはセミコロンを想定してしまいます。その結果，わかりやすい警告の無いままコンパイルに失敗します。</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="index.html"
+                        title="前の章へ">インデント</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="methods_with_numerous_arguments.html"
+                        title="次の章へ">多数の引数をとるメソッド</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/indentation/line_wrapping.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="methods_with_numerous_arguments.html" title="多数の引数をとるメソッド"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="index.html" title="インデント"
+             >前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" >インデント</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

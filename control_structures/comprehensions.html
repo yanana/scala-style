@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>内包表記 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../index.html" />
+    <link rel="up" title="制御構造" href="index.html" />
+    <link rel="next" title="ささいな条件文" href="trivial_conditionals.html" />
+    <link rel="prev" title="波括弧" href="curly_braces.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="trivial_conditionals.html" title="ささいな条件文"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="curly_braces.html" title="波括弧"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">制御構造</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>内包表記<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Scalaは，一つ以上のジェネレータ（一般に，一つ以上の <tt class="docutils literal"><span class="pre">&lt;-</span></tt> シンボル）を使った <tt class="docutils literal"><span class="pre">for</span></tt> 内包表記を表現する事ができます。この場合，利用可能な二つの方法があります。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 誤り!</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span><span class="o">;</span> <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span><span class="o">)</span>
+  <span class="k">yield</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+
+<span class="c1">// 正しい!</span>
+<span class="k">for</span> <span class="o">{</span>
+  <span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span>
+  <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span>
+<span class="o">}</span> <span class="k">yield</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>後者のスタイルはより冗長ですが，一般には読みやすく，より「スケーラブル」である（内包が複雑になってわかりにくくなる事が無い，という意味で）と言えます。二つ以上のジェネレータを含む <tt class="docutils literal"><span class="pre">for</span></tt> 内包表記は，全てこのフォームで書くべきです。ジェネレータを一つだけ持つ内包表記（e.g. <tt class="docutils literal"><span class="pre">for(i</span> <span class="pre">&lt;-</span> <span class="pre">0</span> <span class="pre">to</span> <span class="pre">10)</span> <span class="pre">yield</span> <span class="pre">i</span></tt> ）は，最初のフォーム（波括弧ではなく括弧）を用いるべきです。</p>
+<p>このルールに対する例外は， <tt class="docutils literal"><span class="pre">yield</span></tt> 節の無い <tt class="docutils literal"><span class="pre">for</span></tt> 内包表記です。この場合，</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 誤り!</span>
+<span class="k">for</span> <span class="o">{</span>
+  <span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span>
+  <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span>
+<span class="o">}</span> <span class="o">{</span>
+  <span class="n">printf</span><span class="o">(</span><span class="s">&quot;(%d, %d)&quot;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c1">// 正しい!</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span><span class="o">;</span> <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">printf</span><span class="o">(</span><span class="s">&quot;(%d, %d)&quot;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>comprehension).
+結果として， <tt class="docutils literal"><span class="pre">for</span></tt> 内包表記はその可読性の高さ（これは <tt class="docutils literal"><span class="pre">for</span></tt> 内包表記を拡張した理由の一つです）から <tt class="docutils literal"><span class="pre">map</span></tt> ， <tt class="docutils literal"><span class="pre">flatMap</span></tt> ，そして <tt class="docutils literal"><span class="pre">filter</span></tt> の連鎖呼び出しよりも好ましいと言えます。</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="curly_braces.html"
+                        title="前の章へ">波括弧</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="trivial_conditionals.html"
+                        title="次の章へ">ささいな条件文</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/control_structures/comprehensions.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="trivial_conditionals.html" title="ささいな条件文"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="curly_braces.html" title="波括弧"
+             >前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" >制御構造</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

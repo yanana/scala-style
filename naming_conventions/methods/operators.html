@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>演算子 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <script type="text/javascript" src="../../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
+    <link rel="up" title="メソッド" href="index.html" />
+    <link rel="next" title="フィールド" href="../fields.html" />
+    <link rel="prev" title="括弧" href="parentheses.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../fields.html" title="フィールド"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="parentheses.html" title="括弧"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >命名規約</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">メソッド</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>演算子<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>使わないように！Scalaが演算子を用いたAPI設計をどの程度サポートしているかは別にして，演算子の定義は軽々しく手を出すべきではありません。その演算子が一般的では無い場合（例えば，<tt class="docutils literal"><span class="pre">&gt;&gt;#&gt;&gt;</span></tt>）は特にそうです。
+一般的なルールとして，演算子には2つの適切なユースケースがあります。</p>
+<ul class="simple">
+<li>ドメイン特化言語（e.g. <tt class="docutils literal"><span class="pre">actor1</span> <span class="pre">!</span> <span class="pre">Msg</span></tt>）</li>
+<li>論理的，数学的な演算（e.g. <tt class="docutils literal"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></tt>や<tt class="docutils literal"><span class="pre">c</span> <span class="pre">::</span> <span class="pre">d</span></tt>）</li>
+</ul>
+<p>前者のケースでは，構文が本当に有益な限りは演算子を使用しても構いません。しかしながら，通常のAPI設計の間は，演算子は純粋函数的な演算に限定して取っておくべきです。従って，<tt class="docutils literal"><span class="pre">&gt;&gt;=</span></tt>演算子を2つのモナドを合成する目的で定義する事は構いませんが，<tt class="docutils literal"><span class="pre">&lt;&lt;</span></tt>演算子をアウトプットストリームに書き出す用途で定義する事は認められません。前者は数学的に明確に定義されていて副作用がありませんが，後者はそのどちらにもあてはまりません。</p>
+<p>Scalaでは演算子の定義はその危険性を良く理解した上級者のみが使うような高等な機能として考えられています。注意しないと，過度の演算子オーバーロードは単純極まりないコードをも記号の嵐にしてしまいます。</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="parentheses.html"
+                        title="前の章へ">括弧</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="../fields.html"
+                        title="次の章へ">フィールド</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../sources/naming_conventions/methods/operators.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../fields.html" title="フィールド"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="parentheses.html" title="括弧"
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >命名規約</a> &raquo;</li>
+          <li><a href="index.html" >メソッド</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

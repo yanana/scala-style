@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>アクセッサ・ミューテータ &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <script type="text/javascript" src="../../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../../index.html" />
+    <link rel="up" title="メソッド" href="index.html" />
+    <link rel="next" title="括弧" href="parentheses.html" />
+    <link rel="prev" title="メソッド" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="parentheses.html" title="括弧"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="index.html" title="メソッド"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >命名規約</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">メソッド</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>アクセッサ・ミューテータ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Scalaは，ミューテータ・アクセッサメソッドに<tt class="docutils literal"><span class="pre">set</span></tt>/<tt class="docutils literal"><span class="pre">get</span></tt>を前置するJavaの慣習に従い<strong>ません</strong>。代わりに，以下の慣例があります。</p>
+<ul class="simple">
+<li><strong>殆どの</strong>ブーリアン・非ブーリアンプロパティのアクセッサにおいて，プロパティ名と同じメソッド名とします。</li>
+<li><strong>いくらかの</strong>ブーリアンプロパティのアクセッサにおいて，プロパティ名の語頭を大文字にして<tt class="docutils literal"><span class="pre">is</span></tt>を前置したもの（e.g. <tt class="docutils literal"><span class="pre">isEmpty</span></tt>）をメソッド名とすることもできます。ただし，これは対応するミューテータが無い場合にのみ適用すべきです。ブーリアンアクセッサにおける<a class="reference external" href="http://liftweb.com">Lift</a>の&#8221;<tt class="docutils literal"><span class="pre">_?</span></tt>&#8220;を前置する慣習は，Liftフレームワーク以外では用いられておらず，標準的なものでは無いと言うことに注意してください。</li>
+<li>ミューテータメソッド名は，プロパティ名に&#8221;<tt class="docutils literal"><span class="pre">_=</span></tt>&#8220;を後置したものとするべきです。対応するアクセッサが上述した適切なネーミングがされたものであれば，呼び出し側に対称性のある構文を提供できます。</li>
+</ul>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+
+  <span class="k">def</span> <span class="n">bar</span> <span class="k">=</span> <span class="o">...</span>
+
+  <span class="k">def</span> <span class="n">bar_=</span><span class="o">(</span><span class="n">bar</span><span class="k">:</span> <span class="kt">Bar</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">...</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">isBaz</span> <span class="k">=</span> <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="k">val</span> <span class="n">foo</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Foo</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">bar</span>             <span class="c1">// アクセッサ</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">bar</span> <span class="k">=</span> <span class="n">bar2</span>      <span class="c1">// ミューテータ</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">isBaz</span>           <span class="c1">// ブーリアンプロパティ</span>
+</pre></div>
+</div>
+<p>極めて遺憾な事に，これらの慣習はJavaにおけるそれとアクセッサとミューテータでカプセル化されたプライベートフィールドの命名において，その特質の違いから相反するものとなります。例えば，次のコードを見てください。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="n">public</span> <span class="k">class</span> <span class="nc">Company</span> <span class="o">{</span>
+    <span class="k">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="n">public</span> <span class="nc">String</span> <span class="n">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="n">name</span> <span class="k">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>アクセッサにおける上記の命名規則に従いながら，Scalaのこの規約を採用しようとしたとき，Scalaコンパイラは<tt class="docutils literal"><span class="pre">name</span></tt>フィールドと<tt class="docutils literal"><span class="pre">name</span></tt>メソッドの名前が衝突していると文句を言ってくるでしょう。この問題を回避する方法は多数あり，コミュニティではまだ標準化がなされていません。次のコード例は，数多の回避方法から，エラーになり辛い規約の1つを示しています。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Company</span> <span class="o">{</span>
+  <span class="k">private</span> <span class="k">val</span> <span class="nc">_name</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">_</span>
+
+  <span class="k">def</span> <span class="n">name</span> <span class="k">=</span> <span class="nc">_name</span>
+
+  <span class="k">def</span> <span class="n">name_=</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">_name</span> <span class="k">=</span> <span class="n">name</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>ハンガリアン記法は最低最悪に見苦しいものですが，識別子をぐちゃぐちゃにせずに<tt class="docutils literal"><span class="pre">_name</span></tt>フィールドよりも明確にできるという利点はあります。<tt class="docutils literal"><span class="pre">name_</span></tt>と打ちたかったのを<tt class="docutils literal"><span class="pre">name</span> <span class="pre">_</span></tt>と間違えて打つ危険を避けるため，アンダースコアは後置よりも前置の方が好ましいでしょう。Scalaの型推論を多用すると，このタイプミスが極めて判り辛いエラーを招く可能性があります。</p>
+<p>Javaの様な，アクセッサ・ミューテータを必要とする言語でフィールドが利用される事が多々あると言うことを気に留めておいてください。選択を迫られたら，常にフィールドをメソッドに優先してください。</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="index.html"
+                        title="前の章へ">メソッド</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="parentheses.html"
+                        title="次の章へ">括弧</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../sources/naming_conventions/methods/accessors_mutators.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="parentheses.html" title="括弧"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="index.html" title="メソッド"
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >命名規約</a> &raquo;</li>
+          <li><a href="index.html" >メソッド</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

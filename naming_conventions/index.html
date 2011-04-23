@@ -1,0 +1,139 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>命名規約 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../index.html" />
+    <link rel="next" title="クラス・トレイト" href="classes_traits.html" />
+    <link rel="prev" title="多数の引数をとるメソッド" href="../indentation/methods_with_numerous_arguments.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="classes_traits.html" title="クラス・トレイト"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="../indentation/methods_with_numerous_arguments.html" title="多数の引数をとるメソッド"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>命名規約<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>一般に，Scalaは「キャメルケース」命名規約を用います。つまり，各単語（最初の単語は違うかもしれません）をその最初の文字を大文字にすることで区切ります。アンダースコア（<tt class="docutils literal"><span class="pre">_</span></tt>）はScalaの文法で特別な意味を持つため，使わないように<strong>厳しく</strong>自制してください。いくつかの重要な例外規則が，下に挙げたものの中にあることに留意してください。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classes_traits.html">クラス・トレイト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">オブジェクト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">パッケージ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="packages.html#id2">2.8以前のバージョン</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="methods/index.html">メソッド</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methods/accessors_mutators.html">アクセッサ・ミューテータ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methods/parentheses.html">括弧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methods/operators.html">演算子</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fields.html">フィールド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_parameters/index.html">型パラメータ（ジェネリクス）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="type_parameters/higher_kinds.html">高階型</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="type_aliases.html">型エイリアス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annotations.html">アノテーション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special_note_on_brevity.html">表現の簡潔さに関する特記事項</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="../indentation/methods_with_numerous_arguments.html"
+                        title="前の章へ">多数の引数をとるメソッド</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="classes_traits.html"
+                        title="次の章へ">クラス・トレイト</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/naming_conventions/index.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="classes_traits.html" title="クラス・トレイト"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="../indentation/methods_with_numerous_arguments.html" title="多数の引数をとるメソッド"
+             >前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

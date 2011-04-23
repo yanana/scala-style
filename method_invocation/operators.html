@@ -1,0 +1,132 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>演算子 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../index.html" />
+    <link rel="up" title="Method Invocation" href="index.html" />
+    <link rel="next" title="ファイル" href="../files/index.html" />
+    <link rel="prev" title="Higher-Order Functions" href="arity1/higher_order_functions.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../files/index.html" title="ファイル"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="arity1/higher_order_functions.html" title="Higher-Order Functions"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Method Invocation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>演算子<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>記号メソッド（演算子）は， <em>常に</em> 対象オブジェクト，演算子と引数をスペースで区切った中置記法で記述するべきです。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 正しい!</span>
+<span class="s">&quot;daniel&quot;</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="s">&quot;Spiewak&quot;</span>
+
+<span class="c1">// 誤り!</span>
+<span class="s">&quot;daniel&quot;</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="s">&quot;spiewak&quot;</span>
+</pre></div>
+</div>
+<p>殆どの箇所で，このイディオムはJavaとHaskellの文法規約に従います。</p>
+<p>2つ以上の引数をとる演算子（実際にあります）もまた，スペース区切りの中置記法で呼び出すべきです。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="n">foo</span> <span class="o">**</span> <span class="o">(</span><span class="n">bar</span><span class="o">,</span> <span class="n">baz</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>こういった演算子は極めて稀で，またAPIを設計する際には避けるべきです。</p>
+<p>最後に，``Iterator`` のメソッド <tt class="docutils literal"><span class="pre">/:</span></tt> と <tt class="docutils literal"><span class="pre">:\</span></tt> の使用は避けて，より明示的な <tt class="docutils literal"><span class="pre">foldLeft</span></tt> と <tt class="docutils literal"><span class="pre">foldRight</span></tt> を使用するべきです。 <tt class="docutils literal"><span class="pre">/:</span></tt> の右結合は，数文字の節約に見合わず極めて可読性を下げる可能性があります。</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="arity1/higher_order_functions.html"
+                        title="前の章へ">Higher-Order Functions</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="../files/index.html"
+                        title="次の章へ">ファイル</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/method_invocation/operators.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../files/index.html" title="ファイル"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="arity1/higher_order_functions.html" title="Higher-Order Functions"
+             >前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Method Invocation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>

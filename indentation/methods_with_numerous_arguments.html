@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>多数の引数をとるメソッド &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <link rel="stylesheet" href="../static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../index.html" />
+    <link rel="up" title="インデント" href="index.html" />
+    <link rel="next" title="命名規約" href="../naming_conventions/index.html" />
+    <link rel="prev" title="行の折り返し" href="line_wrapping.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../naming_conventions/index.html" title="命名規約"
+             accesskey="N">次へ</a></li>
+        <li class="right" >
+          <a href="line_wrapping.html" title="行の折り返し"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">インデント</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>多数の引数をとるメソッド<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>多数の引数（5つ以上の）をとるメソッドを呼び出す際，複数行に分割した方が良い場合がよくあります。このとき，現在のインデントレベルからスペース2つ分インデントして全ての引数を配置してください。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="n">foo</span><span class="o">(</span>
+  <span class="n">someVeryLongFieldName</span><span class="o">,</span>
+  <span class="n">andAnotherVeryLongFieldName</span><span class="o">,</span>
+  <span class="s">&quot;this is a string&quot;</span><span class="o">,</span>
+  <span class="mf">3.1415</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>こうすると，メソッド名を後で変更した際に再度パラメータを整列する必要がありません。</p>
+<p>この類の呼び出しを避けるため，行の長さにも大いに気を配る必要があります。より具体的に言えば，各パラメータを整えるのに50あまりものスペースが必要となる場合にはこのような呼び出しは避けるべきです。この場合，呼び出しそのものを次の行に移動して2スペース分インデントすると良いでしょう。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 正しい！</span>
+<span class="k">val</span> <span class="n">myOnerousAndLongFieldNameWithNoRealPoint</span> <span class="k">=</span>
+  <span class="n">foo</span><span class="o">(</span>
+    <span class="n">someVeryLongFieldName</span><span class="o">,</span>
+    <span class="n">andAnotherVeryLongFieldName</span><span class="o">,</span>
+    <span class="s">&quot;this is a string&quot;</span><span class="o">,</span>
+    <span class="mf">3.1415</span><span class="o">)</span>
+
+<span class="c1">// 誤り！</span>
+<span class="k">val</span> <span class="n">myOnerousAndLongFieldNameWithNoRealPoint</span> <span class="k">=</span> <span class="n">foo</span><span class="o">(</span><span class="n">someVeryLongFieldName</span><span class="o">,</span>
+                                                   <span class="n">andAnotherVeryLongFieldName</span><span class="o">,</span>
+                                                   <span class="s">&quot;this is a string&quot;</span><span class="o">,</span>
+                                                   <span class="mf">3.1415</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>更に，3，4個以上の引数をとるメソッドを使わないようにすれば言うことはありません！</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="line_wrapping.html"
+                        title="前の章へ">行の折り返し</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="../naming_conventions/index.html"
+                        title="次の章へ">命名規約</a></p>
+
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/indentation/methods_with_numerous_arguments.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<h3>別のフォーマット</h3>
+<ul>
+	<li><a href="../ScalaStyleGuide.pdf">Download PDF</a></li>
+</ul>
+<h3>貢献</h3>
+<ul>
+	<li><a href="http://github.com/yanana/scala-style/">GitHubプロジェクト</a>を見てください</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../naming_conventions/index.html" title="命名規約"
+             >次へ</a></li>
+        <li class="right" >
+          <a href="line_wrapping.html" title="行の折り返し"
+             >前へ</a> |</li>
+        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" >インデント</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Scala Community.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7 で生成しました。
+    </div>
+  </body>
+</html>
