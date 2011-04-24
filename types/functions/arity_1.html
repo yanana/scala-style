@@ -51,15 +51,15 @@
             
   <div class="section" id="id1">
 <h1>1引数の函数型<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Scalaには一引数の関数を宣言するのに使われる特別なシンタックスがあります。例えば次のようなものです。</p>
+<p>Scalaには1引数の函数を宣言するのに使われる特別なシンタックスがあります。例えば次のようなものです。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span>
 </pre></div>
 </div>
-<p>具体的に言うと，パラメータ型の括弧は省略する事ができます。そのため，不要に冗長になることを防ぐため， <tt class="docutils literal"><span class="pre">f</span></tt> の型を <tt class="docutils literal"><span class="pre">(A)</span> <span class="pre">=&gt;</span> <span class="pre">B</span></tt> として宣言しませんでした。より極端な例を考えてみると，次のようになります。</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 間違い!</span>
+<p>具体的に言うと，パラメータ型の括弧は省略する事ができます。そのため，不要に冗長になることを防ぐため，<tt class="docutils literal"><span class="pre">f</span></tt>の型を<tt class="docutils literal"><span class="pre">(A)</span> <span class="pre">=&gt;</span> <span class="pre">B</span></tt>として宣言しませんでした。より極端な例を考えてみると，次のようになります。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 誤り！</span>
 <span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="nc">Boolean</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Double</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span>
 
-<span class="c1">// 正しい!</span>
+<span class="c1">// 正しい！</span>
 <span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">String</span> <span class="k">=&gt;</span> <span class="nc">Boolean</span> <span class="k">=&gt;</span> <span class="nc">Double</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span>
 </pre></div>
 </div>

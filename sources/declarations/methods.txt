@@ -9,7 +9,8 @@
     
 .. The only exceptions to this rule are methods which return ``Unit``.  Such methods
    should use Scala's syntactic sugar to avoid accidentally confusing return types::
-ただし，\ ``Unit``\ 型を返すメソッドはこのルールへの反例となります。混乱を防ぐため，シンタックスシュガーを用いて次の様に書くべきです。 ::
+ただし，\ ``Unit``\ 型を返すメソッドはこのルールへの反例となります。混乱を防ぐため，シンタックスシュガーを用いて\
+次の様に書くべきです。 ::
     
     def foo(bar: Baz) {       // 戻り値の型はUnit
       expr

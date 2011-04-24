@@ -50,7 +50,7 @@
 <h1>宣言<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="id2">
 <h2>クラス<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>クラス・オブジェクト・トレイトのコンストラクタは，行が「長すぎ」なければ（およそ100文字程度），一行で宣言するべきです。行が長くなってしまう場合には，各コンストラクタ引数を行毎に配置して，スペース<strong>4つ</strong>でインデントします。</p>
+<p>クラス・オブジェクト・トレイトのコンストラクタは，行が「長すぎ」なければ（およそ100文字程度），1行で宣言するべきです。行が長くなってしまう場合には，各コンストラクタ引数を行毎に配置して，スペース<strong>4つ</strong>でインデントします。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span>
 <span class="o">}</span>
 
@@ -65,7 +65,7 @@
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>クラス/オブジェクト/トレイトが何らか継承をしている場合，同様の規則があてはまります。100文字を越えなければ一行で宣言し，越える場合にはスペース<strong>4つ</strong>で各引数をインデントし，継承している対象をスペース<strong>2つ</strong>でインデントします。こうするとコンストラクタ引数と継承の違いが見た目で区別がつきます。</p>
+<p>クラス・オブジェクト・トレイトが何らか継承をしている場合，同様の規則があてはまります。100文字を越えなければ1行で宣言し，越える場合にはスペース<strong>4つ</strong>で各引数をインデントし，継承している対象をスペース<strong>2つ</strong>でインデントします。こうするとコンストラクタ引数と継承の違いが見た目で区別がつきます。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Person</span><span class="o">(</span>
     <span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
     <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
@@ -95,7 +95,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>関数値<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>函数値<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>函数値を宣言するための様々なオプションをScalaは提供しています。例えば，次の宣言は全く同じものです。</p>
 <ol class="arabic simple">
 <li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f1</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">(a:</span> <span class="pre">Int,</span> <span class="pre">b:</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">}</span></tt></li>
@@ -126,7 +126,7 @@
 <li><a class="reference internal" href="#id2">クラス</a><ul>
 </ul>
 </li>
-<li><a class="reference internal" href="#id3">関数値</a><ul>
+<li><a class="reference internal" href="#id3">函数値</a><ul>
 </ul>
 </li>
 </ul>

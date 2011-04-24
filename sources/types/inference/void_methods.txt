@@ -5,7 +5,8 @@
 .. The exception to the "annotate everything public" rule is methods which return
    ``Unit``.  *Any* method which returns ``Unit`` should be declared using Scala's
    syntactic sugar for that case::
-\ ``Unit``\ 型を返すメソッドは，「全てをパブリックとする」ルールの例外です。\ *全ての*\ \ ``Unit``\ 型を返すメソッドは，このような場合のためのシンタックスシュガーを使って宣言するべきです。 ::
+\ ``Unit``\ 型を返すメソッドは，「全てをパブリックとする」ルールの例外です。\ **全ての**\ \ ``Unit``\ 型を返すメソッドは，\
+このような場合のためのシンタックスシュガーを使って宣言するべきです。 ::
     
     def printName() {
       println("Novell")

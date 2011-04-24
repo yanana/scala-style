@@ -53,7 +53,7 @@
 <h1>修飾子<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>メソッド修飾子は次の順序で与えるべきです（それぞれ適用可能な場合）。</p>
 <ol class="arabic simple">
-<li>アノテーション，<em>1行に1つずつ</em></li>
+<li>アノテーション，<strong>1行に1つずつ</strong></li>
 <li>オーバーライド修飾子（<tt class="docutils literal"><span class="pre">override</span></tt>）</li>
 <li>アクセス修飾子（<tt class="docutils literal"><span class="pre">protected</span></tt>，<tt class="docutils literal"><span class="pre">private</span></tt>）</li>
 <li>ファイナル修飾子（<tt class="docutils literal"><span class="pre">final</span></tt>）</li>
@@ -87,15 +87,15 @@
 </pre></div>
 </div>
 <p>単一の<tt class="docutils literal"><span class="pre">match</span></tt>式からなるメソッドは次のように宣言しましょう。</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 正しい!</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 正しい！</span>
 <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">ls</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">ls</span> <span class="k">match</span> <span class="o">{</span>
   <span class="k">case</span> <span class="n">hd</span> <span class="o">::</span> <span class="n">tail</span> <span class="k">=&gt;</span> <span class="n">hd</span> <span class="o">+</span> <span class="n">sum</span><span class="o">(</span><span class="n">tail</span><span class="o">)</span>
   <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="mi">0</span>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>こうでは<em>ありません</em>。</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 誤り!</span>
+<p>こうでは<strong>ありません</strong>。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 誤り！</span>
 <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">ls</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">{</span>
   <span class="n">ls</span> <span class="k">match</span> <span class="o">{</span>
     <span class="k">case</span> <span class="n">hd</span> <span class="o">::</span> <span class="n">tail</span> <span class="k">=&gt;</span> <span class="n">hd</span> <span class="o">+</span> <span class="n">sum</span><span class="o">(</span><span class="n">tail</span><span class="o">)</span>

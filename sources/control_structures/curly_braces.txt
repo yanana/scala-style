@@ -5,7 +5,7 @@
 .. Curly-braces should be omitted in cases where the control structure represents
    a pure-functional operation and all branches of the control structure (relevant
    to ``if``/``else``) are single-line expressions.  Remember the following guidelines:
-制御構造が純粋函数的な操作を表現する場合や，制御の分岐が一行で書き表される場合には，波括弧は使わない\
+制御構造が純粋函数的な操作を表現する場合や，制御の分岐が1行で書き表される場合には，波括弧は使わない\
 方がいいでしょう。次の指針を覚えておいてください。
 
 .. * ``if`` - Omit braces if you have an ``else`` clause.  Otherwise, surround the

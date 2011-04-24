@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>アノテーション &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>型注釈 &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -49,16 +49,16 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>アノテーション<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>型アノテーションは次のテンプレートに従って記述します。</p>
+<h1>型注釈<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>型注釈は次のテンプレートに従って記述します。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">value</span><span class="k">:</span> <span class="kt">Type</span>
 </pre></div>
 </div>
-<p>これは多くのScala標準ライブラリと全てのMartin Odersky氏のコード例で採用されたスタイルです。値と型の間のスペースは文法を目で追いやすくしてくれます。コロンを型の前では無く値の後ろに置くのは，次の様な場合における混乱を避けるためです。</p>
+<p>これは多くのScala標準ライブラリと，全てのMartin Odersky氏のコード例で採用されたスタイルです。値と型の間のスペースは文法を目で追いやすくしてくれます。コロンを型の前では無く値の後ろに置くのは，次の様な場合における混乱を避けるためです。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">value</span> <span class="o">:::</span>
 </pre></div>
 </div>
-<p>これは<tt class="docutils literal"><span class="pre">::</span></tt>型の値を宣言する妥当なScalaコードです。当然ながら，前置記法のアノテーションコロンは大いに混乱を引き起こします。もう一つ別の選択肢として，「スペース2つ」構文があります。</p>
+<p>実際，これは<tt class="docutils literal"><span class="pre">::</span></tt>型の値を宣言する妥当なScalaコードです。当然ながら，前置記法の型注釈によるコロンは大いに混乱を引き起こします。もう1つ別の選択肢として，「スペース2つ」構文があります。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">value</span> <span class="k">:</span> <span class="kt">Type</span>
 </pre></div>
 </div>

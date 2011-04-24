@@ -1,9 +1,9 @@
 .. Annotations
-アノテーション
+型注釈
 -----------
 
 .. Type annotations should be patterned according to the following template::
-型アノテーションは次のテンプレートに従って記述します。 ::
+型注釈は次のテンプレートに従って記述します。 ::
     
     value: Type
     
@@ -12,7 +12,7 @@
    accurately parsing the syntax.  The reason to place the colon at the end of the
    value rather than the beginning of the type is to avoid confusion in cases such
    as this one::
-これは多くのScala標準ライブラリと全てのMartin Odersky氏のコード例で採用されたスタイルです。\
+これは多くのScala標準ライブラリと，全てのMartin Odersky氏のコード例で採用されたスタイルです。\
 値と型の間のスペースは文法を目で追いやすくしてくれます。コロンを型の前では無く値の後ろに置くのは，\
 次の様な場合における混乱を避けるためです。 ::
     
@@ -21,8 +21,8 @@
 .. This is actually valid Scala, declaring a value to be of type ``::``.  Obviously,
    the prefix-style annotation colon muddles things greatly.  The other option is
    the "two space" syntax::
-これは\ ``::``\ 型の値を宣言する妥当なScalaコードです。当然ながら，前置記法のアノテーションコロンは大いに混乱を引き起こします。\
-もう一つ別の選択肢として，「スペース2つ」構文があります。 ::
+実際，これは\ ``::``\ 型の値を宣言する妥当なScalaコードです。当然ながら，前置記法の型注釈によるコロンは大いに\
+混乱を引き起こします。もう1つ別の選択肢として，「スペース2つ」構文があります。 ::
     
     value : Type
     

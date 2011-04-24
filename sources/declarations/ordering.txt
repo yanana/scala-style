@@ -26,9 +26,9 @@
    logical member ordering would dictate.  This rule *only* applies to ``val`` and
    ``lazy val``!  It becomes very difficult to track changing aliases if ``var``
    declarations are strewn throughout class file.
-スコープの中で，フィールドはメソッドの\ *前に*\ あるべきです。その例外は，\ ``val``\ の定義がブロックに\
+スコープの中で，フィールドはメソッドの\ **前に**\ あるべきです。その例外は，\ ``val``\ の定義がブロックに\
 なっている（2つ以上の式を持っている）と，「メソッドのような」操作（e.g. \ ``List``\ の長さを操作する）を持つ場合です。\
 そのような場合，\ ``val``\ は，ファイルの後ろの方の，論理的な順序が意味する通りに配置します。\
-このルールは\ ``val``\と\ ``lazy val``\に\ *のみ*\ 適用されます！\ ``var``\ の定義がファイル中に散在すると，\
+このルールは\ ``val``\ と\ ``lazy val``\ に\ **のみ**\ 適用されます！\ ``var``\ の定義がファイル中に散在すると，\
 その変化を辿るのが極めて困難になります。
 
