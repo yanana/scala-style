@@ -51,12 +51,12 @@
             
   <div class="section" id="id1">
 <h1>函数値<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>函数値はそれ自身を呼び出す事に価値がある，型推論の特殊なケースをサポートします。</p>
+<p>呼び出し時に役立つ，型推論の特殊なケースを函数値はサポートします。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">ls</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="o">...</span>
 <span class="n">ls</span> <span class="n">map</span> <span class="o">{</span> <span class="n">str</span> <span class="k">=&gt;</span> <span class="n">str</span><span class="o">.</span><span class="n">toInt</span> <span class="o">}</span>
 </pre></div>
 </div>
-<p>宣言しようとしている函数値の型をScalaが既に知っていれば，パラメータに型注釈を付与する必要はありません（上記例の場合，<tt class="docutils literal"><span class="pre">str</span></tt>が該当）。これは非常に便利なので，最大限活用しましょう。函数値を対象とする暗黙の型変換は，この型推論を無効にする事に注意しましょう。</p>
+<p>宣言しようとしている函数値の型をScalaが既に知っていれば，パラメータに型注釈を付与する必要はありません（上記例の場合，<tt class="docutils literal"><span class="pre">str</span></tt>が該当）。これは非常に便利なので，最大限活用しましょう。ただし，函数値を対象とする暗黙の型変換は，この型推論を無効にする事に注意しましょう。</p>
 </div>
 
 
