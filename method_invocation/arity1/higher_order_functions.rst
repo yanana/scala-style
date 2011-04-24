@@ -12,7 +12,7 @@
     
 .. This style is *not* the accepted standard!  The reason to avoid this style is
    for situations where more than one invocation must be chained together::
-この呼び出し方は標準としては受け入れられ\ **ません**\ ！というのも，メソッドチェインの場合 ::
+この呼び出し方は標準としては到底受け入れられ\ **ません**\ ！というのも，メソッドチェインの場合に問題があるからです。 ::
     
     // 誤り！
     names.map { _.toUpperCase }.filter { _.length > 5 }
@@ -20,15 +20,15 @@
     // 正しい！
     names map { _.toUpperCase } filter { _.length > 5 }
 
-Both of these work, but the former exploits an extremely unintuitive wrinkle in
-Scala's grammar.  The sub-expression ``{ _.toUpperCase }.filter`` when taken in
-isolation looks for all the world like we are invoking the ``filter`` method on
-a function value.  However, we are actually invoking ``filter`` on the result of
-the ``map`` method, which takes the function value as a parameter.  This syntax
-is confusing and often discouraged in Ruby, but it is shunned outright in Scala.
+.. Both of these work, but the former exploits an extremely unintuitive wrinkle in
+   Scala's grammar.  The sub-expression ``{ _.toUpperCase }.filter`` when taken in
+   isolation looks for all the world like we are invoking the ``filter`` method on
+   a function value.  However, we are actually invoking ``filter`` on the result of
+   the ``map`` method, which takes the function value as a parameter.  This syntax
+   is confusing and often discouraged in Ruby, but it is shunned outright in Scala.
 これらは共に意図通りに動作しますが，前者は，極めて非直観的なScalaの文法の欠点を不当に利用したものです。\
 途中の\ ``{ _.toUpperCase }.filter``\ の部分を取り出して見ると，\ ``filter``\ メソッドを\
 函数値に対して呼び出している様に見えますが，実際には函数値をパラメータに取る\ ``map``\ メソッドの結果に対して\
-\ ``filter``\ メソッドを呼び出しています。この構文は混乱の元であり，Rubyではたびたび使わない様に\
-言われるものですが，Scalaではあからさまに敬遠されます。
+\ ``filter``\ メソッドを呼び出しています。この構文はRubyではたびたび混乱の元になり，使用が推奨されていませんが，\
+Scalaでは絶対に使いません。
 

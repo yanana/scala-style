@@ -4,7 +4,7 @@
 
 .. Function values support a special case of type inference which is worth calling
    out on its own::
-函数値はそれ自身を呼び出す事に価値がある，型推論の特殊なケースをサポートします。 ::
+呼び出し時に役立つ，型推論の特殊なケースを函数値はサポートします。 ::
     
     val ls: List[String] = ...
     ls map { str => str.toInt }
@@ -16,5 +16,5 @@
    forcing the explicit annotation of parameter types.
 宣言しようとしている函数値の型をScalaが既に知っていれば，パラメータに型注釈を付与する必要は\
 ありません（上記例の場合，\ ``str``\ が該当）。これは非常に便利なので，最大限活用しましょう。\
-函数値を対象とする暗黙の型変換は，この型推論を無効にする事に注意しましょう。
+ただし，函数値を対象とする暗黙の型変換は，この型推論を無効にする事に注意しましょう。
 
