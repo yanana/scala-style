@@ -9,7 +9,8 @@
 .. Class/Object/Trait constructors should be declared all on one line, unless
    the line becomes "too long" (about 100 characters).  In that case, put each 
    constructor argument on its own line, indented **four** spaces::
-クラス・オブジェクト・トレイトのコンストラクタは，行が「長すぎ」なければ（およそ100文字程度），一行で宣言するべきです。行が長くなってしまう場合には，各コンストラクタ引数を行毎に配置して，スペース\ **4つ**\ でインデントします。 ::
+クラス・オブジェクト・トレイトのコンストラクタは，行が「長すぎ」なければ（およそ100文字程度），1行で宣言するべきです。\
+行が長くなってしまう場合には，各コンストラクタ引数を行毎に配置して，スペース\ **4つ**\ でインデントします。 ::
 
     class Person(name: String, age: Int) {
     }
@@ -28,7 +29,9 @@
    it one one line unless it goes over about 100 characters, and then indent **four**
    spaces with each item being on its own line and **two** spaces for
    extensions; this provides visual separation between constructor arguments and extensions.::
-クラス/オブジェクト/トレイトが何らか継承をしている場合，同様の規則があてはまります。100文字を越えなければ一行で宣言し，越える場合にはスペース\ **4つ**\ で各引数をインデントし，継承している対象をスペース\ **2つ**\ でインデントします。こうするとコンストラクタ引数と継承の違いが見た目で区別がつきます。 ::
+クラス・オブジェクト・トレイトが何らか継承をしている場合，同様の規則があてはまります。100文字を越えなければ1行で宣言し，\
+越える場合にはスペース\ **4つ**\ で各引数をインデントし，継承している対象をスペース\ **2つ**\ でインデントします。\
+こうするとコンストラクタ引数と継承の違いが見た目で区別がつきます。 ::
 
     class Person(
         name: String,
@@ -52,7 +55,7 @@
 
 
 .. Function Values
-関数値
+函数値
 ---------------
 
 .. Scala provides a number of different syntactic options for declaring function
@@ -69,13 +72,15 @@
    normally the case), this syntax becomes extremely unwieldy.  Similarly, (3) is
    concise, but obtuse.  It is difficult for the untrained eye to decipher the fact
    that this is even producing a function value.
-この内，1.と4.を常に使うべきです。2.はこの例では短く簡潔に見えますが，複数行にわたる場合（よく起こる）には非常に判り辛くなります。同様に，3.も簡潔に書けますが，見慣れない人にとっては函数値を作っているということが判読し難いです。
+この内，1.と4.を常に使うべきです。2.はこの例では短く簡潔に見えますが，複数行にわたる場合（よく起こる）には非常に\
+判り辛くなります。同様に，3.も簡潔に書けますが，見慣れない人にとっては函数値を作っているということが判読し難いです。
 
 .. When styles (1) and (4) are used exclusively, it becomes very easy to distinguish
    places in the source code where function values are used.  Both styles make use
    of curly braces (``{}``), allowing those characters to be a visual cue that a
    function value may be involved at some level.
-1.と4.のスタイルだけを使えば，函数値が使われている場所を特定するのが極めて容易になります。どちらのスタイルにおいても波括弧（\ ``{}``\ ）を活用して，函数値がある事に気が付くための視覚的な手がかりとなります。
+1.と4.のスタイルだけを使えば，函数値が使われている場所を特定するのが極めて容易になります。どちらのスタイルにおいても\
+波括弧（\ ``{}``\ ）を活用して，函数値がある事に気が付くための視覚的な手がかりとなります。
 
 .. toctree::
 

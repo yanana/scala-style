@@ -10,7 +10,7 @@
    #. Access modifier (``protected``, ``private``)
    #. Final modifier (``final``)
    #. ``def``
-#. アノテーション，\ *1行に1つずつ*
+#. アノテーション，\ **1行に1つずつ**
 #. オーバーライド修飾子（\ ``override``\ ）
 #. アクセス修飾子（\ ``protected``\ ，\ ``private``\ ）
 #. ファイナル修飾子（\ ``final``\ ）
@@ -67,16 +67,16 @@
    following way::
 単一の\ ``match``\ 式からなるメソッドは次のように宣言しましょう。 ::
     
-    // 正しい!
+    // 正しい！
     def sum(ls: List[Int]): Int = ls match {
       case hd :: tail => hd + sum(tail)
       case Nil => 0
     }
     
 .. *Not* like this::
-こうでは\ *ありません*\ 。 ::
+こうでは\ **ありません**\ 。 ::
     
-    // 誤り!
+    // 誤り！
     def sum(ls: List[Int]): Int = {
       ls match {
         case hd :: tail => hd + sum(tail)
