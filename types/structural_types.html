@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Structural Types &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>構造的部分型 &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -48,15 +48,13 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="structural-types">
-<h1>Structural Types<a class="headerlink" href="#structural-types" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Structural types should be declared on a single line if they are less than 50
-characters in length.  Otherwise, they should be split across multiple lines and
-(usually) assigned to their own type alias:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// wrong!</span>
+  <div class="section" id="id1">
+<h1>構造的部分型<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>構造的部分型は，行が50文字よりも短く収まるのなら1行で定義するべきです。それより長くなるようであれば，複数行に分けて，型エイリアスに代入して使います。</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// 誤り！</span>
 <span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="o">{</span> <span class="kt">def</span> <span class="kt">bar</span><span class="o">(</span><span class="kt">a:</span> <span class="kt">Int</span><span class="o">,</span> <span class="kt">b:</span> <span class="kt">Int</span><span class="o">)</span><span class="kt">:</span> <span class="kt">String</span><span class="o">;</span> <span class="k">val</span> <span class="n">baz</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span> <span class="k">=&gt;</span> <span class="kt">String</span><span class="o">]</span> <span class="o">})</span> <span class="k">=</span> <span class="o">...</span>
 
-<span class="c1">// right!</span>
+<span class="c1">// 正しい！</span>
 <span class="k">private</span> <span class="k">type</span> <span class="kt">FooParam</span> <span class="o">=</span> <span class="o">{</span>
   <span class="k">val</span> <span class="n">baz</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span> <span class="k">=&gt;</span> <span class="kt">String</span><span class="o">]</span>
   <span class="k">def</span> <span class="n">bar</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span>
@@ -65,14 +63,11 @@ characters in length.  Otherwise, they should be split across multiple lines and
 <span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">FooParam</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span>
 </pre></div>
 </div>
-<p>Simpler structural types (under 50 characters) may be declared and used inline:</p>
+<p>50文字に満たないシンプルな構造的部分型はインラインで定義して用いて構いません。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="o">{</span> <span class="kt">val</span> <span class="kt">bar:</span> <span class="kt">String</span> <span class="o">})</span> <span class="k">=</span> <span class="o">...</span>
 </pre></div>
 </div>
-<p>When declaring structural types inline, each member should be separated by a
-semi-colon and a single space, the opening brace should be <em>followed</em> by a space
-while the closing brace should be <em>preceded</em> by a space (as demonstrated in both
-examples above).</p>
+<p>インラインで定義する場合は，上述の例でそうなっているように，その構造的部分型の要素はセミコロンとスペース1つで区切り，左波括弧の後ろと右波括弧の前にスペースを置きます。</p>
 </div>
 
 
