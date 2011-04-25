@@ -1,10 +1,10 @@
 .. Arity-1
-1引数の函数型
+1引数の関数型
 ~~~~~~~
 
 .. Scala has a special syntax for declaring types for functions of arity-1.  For
    example::
-Scalaには1引数の函数を宣言するのに使われる特別なシンタックスがあります。例えば次のようなものです。 ::
+Scalaには1引数の関数を宣言するのに使われる特別なシンタックスがあります。例えば次のようなものです。 ::
     
     def map[B](f: A => B) = ...
     

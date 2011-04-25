@@ -87,7 +87,7 @@
 <li class="toctree-l2"><a class="reference internal" href="methods/modifiers.html">修飾子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="methods/modifiers.html#id2">メソッド本体</a></li>
 <li class="toctree-l2"><a class="reference internal" href="methods/currying.html">複数のパラメータリスト</a></li>
-<li class="toctree-l2"><a class="reference internal" href="methods/higher_order_functions.html">高階函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methods/higher_order_functions.html">高階関数</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fields.html">フィールド</a></li>
@@ -95,20 +95,20 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>函数値<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>函数値を宣言するための様々なオプションをScalaは提供しています。例えば，次の宣言は全く同じものです。</p>
+<h2>関数値<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>関数値を宣言するための様々なオプションをScalaは提供しています。例えば，次の宣言は全く同じものです。</p>
 <ol class="arabic simple">
 <li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f1</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">(a:</span> <span class="pre">Int,</span> <span class="pre">b:</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">}</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f2</span> <span class="pre">=</span> <span class="pre">(a:</span> <span class="pre">Int,</span> <span class="pre">b:</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f3</span> <span class="pre">=</span> <span class="pre">(_:</span> <span class="pre">Int)</span> <span class="pre">+</span> <span class="pre">(_:</span> <span class="pre">Int)</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f4:</span> <span class="pre">(Int,</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">Int</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">_</span> <span class="pre">+</span> <span class="pre">_</span> <span class="pre">}</span></tt></li>
 </ol>
-<p>この内，1.と4.を常に使うべきです。2.はこの例では短く簡潔に見えますが，複数行にわたる場合（よく起こる）には非常に判り辛くなります。同様に，3.も簡潔に書けますが，見慣れない人にとっては函数値を作っているということが判読し難いです。</p>
-<p>1.と4.のスタイルだけを使えば，函数値が使われている場所を特定するのが極めて容易になります。どちらのスタイルにおいても波括弧（<tt class="docutils literal"><span class="pre">{}</span></tt>）を活用して，函数値がある事に気が付くための視覚的な手がかりとなります。</p>
+<p>この内，1.と4.を常に使うべきです。2.はこの例では短く簡潔に見えますが，複数行にわたる場合（よく起こる）には非常に判り辛くなります。同様に，3.も簡潔に書けますが，見慣れない人にとっては関数値を作っているということが判読し難いです。</p>
+<p>1.と4.のスタイルだけを使えば，関数値が使われている場所を特定するのが極めて容易になります。どちらのスタイルにおいても波括弧（<tt class="docutils literal"><span class="pre">{}</span></tt>）を活用して，関数値がある事に気が付くための視覚的な手がかりとなります。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="function_values/spacing.html">スペース</a></li>
-<li class="toctree-l1"><a class="reference internal" href="function_values/multi_expression_functions.html">複数の式を持つ函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_values/multi_expression_functions.html">複数の式を持つ関数</a></li>
 </ul>
 </div>
 </div>
@@ -126,7 +126,7 @@
 <li><a class="reference internal" href="#id2">クラス</a><ul>
 </ul>
 </li>
-<li><a class="reference internal" href="#id3">函数値</a><ul>
+<li><a class="reference internal" href="#id3">関数値</a><ul>
 </ul>
 </li>
 </ul>

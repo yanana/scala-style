@@ -50,7 +50,7 @@
             
   <div class="section" id="id1">
 <h1>複数のコンパイル単位を含むファイル<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>，1つのファイルに複数のコンパイル単位を含めるべき重要なシチュエーションがあります。よくある例として，シールドトレイトとそのサブクラス（函数型言語で利用可能な代数的データ構造を模してよく使われます）があります。</p>
+<p>，1つのファイルに複数のコンパイル単位を含めるべき重要なシチュエーションがあります。よくある例として，シールドトレイトとそのサブクラス（関数型言語で利用可能な代数的データ構造を模してよく使われます）があります。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Option</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span>
 
 <span class="nc">case</span> <span class="k">class</span> <span class="nc">Some</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Option</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>

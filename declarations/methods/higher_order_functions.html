@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>高階函数 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>高階関数 &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -50,19 +50,19 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>高階函数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>高階函数を宣言する際には，函数パラメータが最後にあってカリー化されるときに許される，呼び出し側にとっては喜ばしい構文がある事を心に留めておくといいでしょう。例えば，これはSMLの<tt class="docutils literal"><span class="pre">foldl</span></tt>函数です。</p>
+<h1>高階関数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>高階関数を宣言する際には，関数パラメータが最後にあってカリー化されるときに許される，呼び出し側にとっては喜ばしい構文がある事を心に留めておくといいでしょう。例えば，これはSMLの<tt class="docutils literal"><span class="pre">foldl</span></tt>関数です。</p>
 <div class="highlight-scala"><pre>fun foldl (f: ('b * 'a) -&gt; 'b) (init: 'b) (ls: 'a list) = ...</pre>
 </div>
 <p>Scalaでは，この真逆が好ましいスタイルです。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foldLeft</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">ls</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">init</span><span class="k">:</span> <span class="kt">B</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">B</span><span class="o">,</span> <span class="kt">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span>
 </pre></div>
 </div>
-<p>函数パラメータを<strong>最後</strong>にすることで，呼び出し側の構文を次のようにできます。</p>
+<p>関数パラメータを<strong>最後</strong>にすることで，呼び出し側の構文を次のようにできます。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">foldLeft</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">))(</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}</span>
 </pre></div>
 </div>
-<p>この呼び出しで，函数値は括弧で囲われておらず，それゆえ函数値が函数そのもの（<tt class="docutils literal"><span class="pre">foldLeft</span></tt>）から分離しています。その簡潔さから，このスタイルは好ましいと言えます。</p>
+<p>この呼び出しで，関数値は括弧で囲われておらず，それゆえ関数値が関数そのもの（<tt class="docutils literal"><span class="pre">foldLeft</span></tt>）から分離しています。その簡潔さから，このスタイルは好ましいと言えます。</p>
 </div>
 
 

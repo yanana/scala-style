@@ -20,6 +20,6 @@ Javaだったら，伝統的に3項演算子（\ ``?``/``:``\ ）を使うとこ
    with the ``if``/``else``.  Note that this style should never be used with
    imperative ``if`` expressions nor should curly braces be employed.
 ここで重要な事は，各分岐を\ ``if``/``else``\ とインラインにしても可読性は損なわれないという事です。\
-この記法は，命令的な（函数的ではない）\ ``if``\ 式では決して使ってはならず，また波括弧を伴うべきではない\
+この記法は，命令的な（関数的ではない）\ ``if``\ 式では決して使ってはならず，また波括弧を伴うべきではない\
 ことに注意してください。
 

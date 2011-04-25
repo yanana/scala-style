@@ -55,7 +55,7 @@
 .. When the body of a method cannot be concisely expressed in a single line or is
    of a non-functional nature (some mutable state, local or otherwise), the body
    must be enclosed in braces::
-メソッド本体が1行では適切に表現する事が難しかったり，函数的な性質のものではない（ミュータブルな状態や，ローカルなものなど）場合，\
+メソッド本体が1行では適切に表現する事が難しかったり，関数的な性質のものではない（ミュータブルな状態や，ローカルなものなど）場合，\
 本体はブレースで囲うべきです。 ::
     
     def sum(ls: List[String]) = {

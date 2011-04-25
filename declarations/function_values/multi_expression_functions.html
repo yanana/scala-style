@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>複数の式を持つ函数 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>複数の式を持つ関数 &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -49,14 +49,14 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>複数の式を持つ函数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>殆どの函数値はこれまでに見てきたものよりも複雑になり，多くが複数の式を持ったものになるでしょう。このような複雑な函数値は，行を分割すると読みやすくなることが多いです。複数行に分割した場合には，1.のスタイルを適用します。4.のスタイルは，大きなコードの中では極端に読み辛くなってしまうためです。宣言そのものはメソッドの宣言スタイルにほぼ従い，左波括弧は代入または呼び出しと同じ行に置き，右波括弧は函数の最後の行のすぐ次の行に書きます。パラメータと矢印（<tt class="docutils literal"><span class="pre">=&gt;</span></tt>）は左波括弧と同じ行に置きます。</p>
+<h1>複数の式を持つ関数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>殆どの関数値はこれまでに見てきたものよりも複雑になり，多くが複数の式を持ったものになるでしょう。このような複雑な関数値は，行を分割すると読みやすくなることが多いです。複数行に分割した場合には，1.のスタイルを適用します。4.のスタイルは，大きなコードの中では極端に読み辛くなってしまうためです。宣言そのものはメソッドの宣言スタイルにほぼ従い，左波括弧は代入または呼び出しと同じ行に置き，右波括弧は関数の最後の行のすぐ次の行に書きます。パラメータと矢印（<tt class="docutils literal"><span class="pre">=&gt;</span></tt>）は左波括弧と同じ行に置きます。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">f1</span> <span class="k">=</span> <span class="o">{</span> <span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span>
   <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>前に書いた通り，函数値は型推論を使えるところではどこでも最大限に活用するべきです。</p>
+<p>前に書いた通り，関数値は型推論を使えるところではどこでも最大限に活用するべきです。</p>
 </div>
 
 

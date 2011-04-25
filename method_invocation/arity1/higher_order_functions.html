@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>高階函数 &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>高階関数 &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="../../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -50,8 +50,8 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>高階函数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>前述の通り，函数をパラメータとして取るメソッド（<tt class="docutils literal"><span class="pre">map</span></tt>や<tt class="docutils literal"><span class="pre">foreach</span></tt>の様な）は中値記法で呼び出すべきですが，次の様に呼び出すことも<strong>可能</strong>ではあります。</p>
+<h1>高階関数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>前述の通り，関数をパラメータとして取るメソッド（<tt class="docutils literal"><span class="pre">map</span></tt>や<tt class="docutils literal"><span class="pre">foreach</span></tt>の様な）は中値記法で呼び出すべきですが，次の様に呼び出すことも<strong>可能</strong>ではあります。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">names</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">toUpperCase</span> <span class="o">}</span>     <span class="c1">// 誤り！</span>
 </pre></div>
 </div>
@@ -63,7 +63,7 @@
 <span class="n">names</span> <span class="n">map</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">toUpperCase</span> <span class="o">}</span> <span class="n">filter</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">}</span>
 </pre></div>
 </div>
-<p>これらは共に意図通りに動作しますが，前者は，極めて非直観的なScalaの文法の欠点を不当に利用したものです。途中の<tt class="docutils literal"><span class="pre">{</span> <span class="pre">_.toUpperCase</span> <span class="pre">}.filter</span></tt>の部分を取り出して見ると，<tt class="docutils literal"><span class="pre">filter</span></tt>メソッドを函数値に対して呼び出している様に見えますが，実際には函数値をパラメータに取る<tt class="docutils literal"><span class="pre">map</span></tt>メソッドの結果に対して<tt class="docutils literal"><span class="pre">filter</span></tt>メソッドを呼び出しています。この構文はRubyではたびたび混乱の元になり，使用が推奨されていませんが，Scalaでは絶対に使いません。</p>
+<p>これらは共に意図通りに動作しますが，前者は，極めて非直観的なScalaの文法の欠点を不当に利用したものです。途中の<tt class="docutils literal"><span class="pre">{</span> <span class="pre">_.toUpperCase</span> <span class="pre">}.filter</span></tt>の部分を取り出して見ると，<tt class="docutils literal"><span class="pre">filter</span></tt>メソッドを関数値に対して呼び出している様に見えますが，実際には関数値をパラメータに取る<tt class="docutils literal"><span class="pre">map</span></tt>メソッドの結果に対して<tt class="docutils literal"><span class="pre">filter</span></tt>メソッドを呼び出しています。この構文はRubyではたびたび混乱の元になり，使用が推奨されていませんが，Scalaでは絶対に使いません。</p>
 </div>
 
 

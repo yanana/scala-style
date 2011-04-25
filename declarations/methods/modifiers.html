@@ -79,7 +79,7 @@
 </pre></div>
 </div>
 <p>これら2つの場合分けは，幾分属人的なものです。概して言えば，ケースバイケースで可読性の高い方を選択するべきです。例えば，メソッド宣言が非常に長い一方で本体はとても短かったとします。この場合，本体を次の行に持って行った方が宣言をわかりやすくして，読みやすくなるかもしれません。</p>
-<p>メソッド本体が1行では適切に表現する事が難しかったり，函数的な性質のものではない（ミュータブルな状態や，ローカルなものなど）場合，本体はブレースで囲うべきです。</p>
+<p>メソッド本体が1行では適切に表現する事が難しかったり，関数的な性質のものではない（ミュータブルな状態や，ローカルなものなど）場合，本体はブレースで囲うべきです。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">ls</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
   <span class="k">val</span> <span class="n">ints</span> <span class="k">=</span> <span class="n">ls</span> <span class="n">map</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">toInt</span> <span class="o">}</span>
   <span class="n">ints</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}</span>

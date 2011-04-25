@@ -57,7 +57,7 @@
 <li>ドメイン特化言語（e.g. <tt class="docutils literal"><span class="pre">actor1</span> <span class="pre">!</span> <span class="pre">Msg</span></tt>）</li>
 <li>論理的，数学的な演算（e.g. <tt class="docutils literal"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></tt>や<tt class="docutils literal"><span class="pre">c</span> <span class="pre">::</span> <span class="pre">d</span></tt>）</li>
 </ul>
-<p>前者のケースでは，構文が本当に有益な限りは演算子を使用しても構いません。しかしながら，通常のAPI設計の間は，演算子は純粋函数的な演算に限定して取っておくべきです。従って，<tt class="docutils literal"><span class="pre">&gt;&gt;=</span></tt>演算子を2つのモナドを合成する目的で定義する事は構いませんが，<tt class="docutils literal"><span class="pre">&lt;&lt;</span></tt>演算子をアウトプットストリームに書き出す用途で定義する事は認められません。前者は数学的に明確に定義されていて副作用がありませんが，後者はそのどちらにもあてはまりません。</p>
+<p>前者のケースでは，構文が本当に有益な限りは演算子を使用しても構いません。しかしながら，通常のAPI設計の間は，演算子は純粋関数的な演算に限定して取っておくべきです。従って，<tt class="docutils literal"><span class="pre">&gt;&gt;=</span></tt>演算子を2つのモナドを合成する目的で定義する事は構いませんが，<tt class="docutils literal"><span class="pre">&lt;&lt;</span></tt>演算子をアウトプットストリームに書き出す用途で定義する事は認められません。前者は数学的に明確に定義されていて副作用がありませんが，後者はそのどちらにもあてはまりません。</p>
 <p>Scalaでは演算子の定義はその危険性を良く理解した上級者のみが使うような高等な機能として考えられています。注意しないと，過度の演算子オーバーロードは単純極まりないコードをも記号の嵐にしてしまいます。</p>
 </div>
 

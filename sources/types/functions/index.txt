@@ -1,10 +1,10 @@
 .. Functions
-函数型
+関数型
 ---------
 
 .. Function types should be declared with a space between the parameter type, the
    arrow and the return type::
-函数型は，引数の型，矢印と戻り値の型をスペースで区切って宣言します。 ::
+関数型は，引数の型，矢印と戻り値の型をスペースで区切って宣言します。 ::
     
     def foo(f: Int => String) = ...
     

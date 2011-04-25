@@ -7,7 +7,7 @@
    is that of a sealed trait and several sub-classes (often emulating the ADT
    language feature available in functional languages)::
 ，1つのファイルに複数のコンパイル単位を含めるべき重要なシチュエーションがあります。\
-よくある例として，シールドトレイトとそのサブクラス（函数型言語で利用可能な代数的データ構造を模してよく使われます）\
+よくある例として，シールドトレイトとそのサブクラス（関数型言語で利用可能な代数的データ構造を模してよく使われます）\
 があります。 ::
     
     sealed trait Option[+A]

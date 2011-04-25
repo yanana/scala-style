@@ -4,7 +4,7 @@
 
 .. Because of Scala's roots in the functional languages, it is quite normal for
    local field names to be extremely brief::
-函数型言語をその背景に持つことから，Scalaではローカルフィールドの名前が非常にそっけない事は日常茶飯事です。 ::
+関数型言語をその背景に持つことから，Scalaではローカルフィールドの名前が非常にそっけない事は日常茶飯事です。 ::
     
     def add(a: Int, b: Int) = a + b
     
