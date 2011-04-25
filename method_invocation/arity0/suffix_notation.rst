@@ -36,7 +36,7 @@ Scalaのパーサはそのメソッドを（誤って）中値記法とみなし
 .. In this case, suffix notation must be used with the ``toStream`` function,
    otherwise a separate value assignment would have been required.  However, under
    less specialized circumstances, suffix notation should be avoided::
-この場合，\ ``toStream``\ 函数は後置記法で呼び出される必要があり，そうでなければ，分離した値の代入が必要になります。\
+この場合，\ ``toStream``\ 関数は後置記法で呼び出される必要があり，そうでなければ，分離した値の代入が必要になります。\
 しかし，より一般的に言えば，後置記法は避けるべき場合の方が多いでしょう。 ::
     
     // 誤り！

@@ -55,12 +55,12 @@
 
 
 .. Function Values
-函数値
+関数値
 ---------------
 
 .. Scala provides a number of different syntactic options for declaring function
    values.  For example, the following declarations are exactly equivalent:
-函数値を宣言するための様々なオプションをScalaは提供しています。例えば，次の宣言は全く同じものです。 ::
+関数値を宣言するための様々なオプションをScalaは提供しています。例えば，次の宣言は全く同じものです。 ::
 
 1. ``val f1 = { (a: Int, b: Int) => a + b }``
 2. ``val f2 = (a: Int, b: Int) => a + b``
@@ -73,14 +73,14 @@
    concise, but obtuse.  It is difficult for the untrained eye to decipher the fact
    that this is even producing a function value.
 この内，1.と4.を常に使うべきです。2.はこの例では短く簡潔に見えますが，複数行にわたる場合（よく起こる）には非常に\
-判り辛くなります。同様に，3.も簡潔に書けますが，見慣れない人にとっては函数値を作っているということが判読し難いです。
+判り辛くなります。同様に，3.も簡潔に書けますが，見慣れない人にとっては関数値を作っているということが判読し難いです。
 
 .. When styles (1) and (4) are used exclusively, it becomes very easy to distinguish
    places in the source code where function values are used.  Both styles make use
    of curly braces (``{}``), allowing those characters to be a visual cue that a
    function value may be involved at some level.
-1.と4.のスタイルだけを使えば，函数値が使われている場所を特定するのが極めて容易になります。どちらのスタイルにおいても\
-波括弧（\ ``{}``\ ）を活用して，函数値がある事に気が付くための視覚的な手がかりとなります。
+1.と4.のスタイルだけを使えば，関数値が使われている場所を特定するのが極めて容易になります。どちらのスタイルにおいても\
+波括弧（\ ``{}``\ ）を活用して，関数値がある事に気が付くための視覚的な手がかりとなります。
 
 .. toctree::
 

@@ -5,7 +5,7 @@
 .. In general, you should only use multiple parameter lists if there is a good reason to do so.
    These methods (or similarly declared functions) have a more verbose declaration and invocation syntax and are
    harder for less-experienced Scala developers to understand.  
-一般に，そうする理由があるときにだけ複数のパラメータリストを使うべきです。複数のパラメータリストを持つメソッドや函数は，\
+一般に，そうする理由があるときにだけ複数のパラメータリストを使うべきです。複数のパラメータリストを持つメソッドや関数は，\
 宣言も呼び出し側のコードも冗長になり，経験の少ない開発者にとっては判り辛くなります。
 
 .. There are three main reasons you should do this:

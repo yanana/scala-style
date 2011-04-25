@@ -18,7 +18,7 @@
    parenthetical or to end with an infix binary function or operator in which the
    right parameter is not given::
 式を2つ以上の行に分割する必要に迫られたら，続く行はスペース2つ分\ **最初の行**\ からインデントするべきです。\
-また，Scalaは各「ラップされる行」に閉じていない括弧か，適切なパラメータが渡されていない中置の2項函数または演算子\
+また，Scalaは各「ラップされる行」に閉じていない括弧か，適切なパラメータが渡されていない中置の2項関数または演算子\
 を要求する事も頭の片隅に留めておいてください。 ::
     
     val result = 1 + 2 + 3 + 4 + 5 + 6 +

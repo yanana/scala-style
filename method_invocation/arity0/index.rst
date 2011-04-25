@@ -15,7 +15,7 @@ Scalaでは，引数のないメソッドの呼び出しにおいて括弧を省
    side-effects (purely-functional).  In other words, it would be acceptable to
    omit parentheses when calling ``queue.size``, but not when calling ``println()``.
    This convention mirrors the method declaration convention given above.
-しかし，この構文は，そのメソッドが副作用の無い（純粋函数的な）場合に\ **のみ**\ 使うべきです。\
+しかし，この構文は，そのメソッドが副作用の無い（純粋関数的な）場合に\ **のみ**\ 使うべきです。\
 つまり，\ ``queue.size``\ を呼び出す時には括弧を省略できるが，\ ``println()``\ ではできないということです。\
 この慣習は，上述のメソッド宣言における規約と対をなします。
 

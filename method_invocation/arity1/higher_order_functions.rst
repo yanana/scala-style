@@ -1,11 +1,11 @@
 .. Higher-Order Functions
-高階函数
+高階関数
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. As noted, methods which take functions as parameters (such as ``map`` or ``foreach``)
    should be invoked using infix notation.  It is also *possible* to invoke such
    methods in the following way::
-前述の通り，函数をパラメータとして取るメソッド（\ ``map``\ や\ ``foreach``\ の様な）は中値記法で呼び出す\
+前述の通り，関数をパラメータとして取るメソッド（\ ``map``\ や\ ``foreach``\ の様な）は中値記法で呼び出す\
 べきですが，次の様に呼び出すことも\ **可能**\ ではあります。 ::
     
     names.map { _.toUpperCase }     // 誤り！
@@ -28,7 +28,7 @@
    is confusing and often discouraged in Ruby, but it is shunned outright in Scala.
 これらは共に意図通りに動作しますが，前者は，極めて非直観的なScalaの文法の欠点を不当に利用したものです。\
 途中の\ ``{ _.toUpperCase }.filter``\ の部分を取り出して見ると，\ ``filter``\ メソッドを\
-函数値に対して呼び出している様に見えますが，実際には函数値をパラメータに取る\ ``map``\ メソッドの結果に対して\
+関数値に対して呼び出している様に見えますが，実際には関数値をパラメータに取る\ ``map``\ メソッドの結果に対して\
 \ ``filter``\ メソッドを呼び出しています。この構文はRubyではたびたび混乱の元になり，使用が推奨されていませんが，\
 Scalaでは絶対に使いません。
 
