@@ -50,11 +50,7 @@
             
   <div class="section" id="id1">
 <h1>型パラメータ（ジェネリクス）<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Type parameters are typically a single upper-case letter (from the English
-alphabet).  Conventionally, parameters blindly start at <tt class="docutils literal"><span class="pre">A</span></tt> and ascend up to
-<tt class="docutils literal"><span class="pre">Z</span></tt> as necessary.  This contrasts with the Java convention of using <tt class="docutils literal"><span class="pre">T</span></tt>, <tt class="docutils literal"><span class="pre">K</span></tt>,
-<tt class="docutils literal"><span class="pre">V</span></tt> and <tt class="docutils literal"><span class="pre">E</span></tt>.  For example::
-型パラメータは，通常大文字1文字（英語のアルファベット）で書きます。慣例として，<tt class="docutils literal"><span class="pre">A</span></tt>から始まり必要に応じて<tt class="docutils literal"><span class="pre">Z</span></tt>まで順に使っていきます。<tt class="docutils literal"><span class="pre">T</span></tt>，<tt class="docutils literal"><span class="pre">K</span></tt>，<tt class="docutils literal"><span class="pre">V</span></tt>，<tt class="docutils literal"><span class="pre">K</span></tt>などを使うJavaとは対照的です。例えば次の様に書きます。</p>
+<p>型パラメータは，通常大文字1文字（英語のアルファベット）で書きます。慣例として，<tt class="docutils literal"><span class="pre">A</span></tt>から始まり必要に応じて<tt class="docutils literal"><span class="pre">Z</span></tt>まで順に使っていきます。<tt class="docutils literal"><span class="pre">T</span></tt>，<tt class="docutils literal"><span class="pre">K</span></tt>，<tt class="docutils literal"><span class="pre">V</span></tt>，<tt class="docutils literal"><span class="pre">K</span></tt>などを使うJavaとは対照的です。例えば次の様に書きます。</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
   <span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">...</span>
 <span class="o">}</span>
