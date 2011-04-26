@@ -9,7 +9,7 @@
    to values or by using the `pipeline operator`_.  However, this is not always a
    practical solution.
 単一の式が読みづらい程に長くなってしまったら（大抵，80文字を越えるとそうなる），\
-\ **好ましい**\ アプローチは，中間結果値を用意したり `パイプライン演算子`_ \
+\ **好ましい**\ アプローチは，中間結果値を用意したり\ `パイプライン演算子`_\ \
 を使ってその式を分割することです。しかし，この手法が必ずしも常に現実的な解決策となる訳ではありません。
 
 .. When it is absolutely necessary to wrap an expression across more than one line,
@@ -31,5 +31,5 @@
 この演算子が無いと，ラップするつもりの行末にScalaはセミコロンを想定してしまいます。\
 その結果，わかりやすい警告の無いままコンパイルに失敗します。
 
-.. _pipeline operator: http://paste.pocoo.org/show/134013/
+.. _パイプライン演算子: http://paste.pocoo.org/show/134013/
 
